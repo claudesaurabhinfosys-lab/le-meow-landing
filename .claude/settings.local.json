@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Expand-Archive -Path \"D:\\\\Projects\\\\Meow\\\\lemeow\\\\Le Meow Icons.zip\" -DestinationPath \"D:\\\\Projects\\\\Meow\\\\lemeow\\\\extracted\" -Force)"
+    ]
+  }
+}

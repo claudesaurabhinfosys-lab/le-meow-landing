@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58LJSNP3');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Meow — Your World. Simplified.</title>
+<meta name="description" content="Le Meow is Singapore's lifestyle super-app. Book beauty, home services, tuition, helpers and workshops — all in one app. Download on the App Store and Google Play.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF;
+  --off:#FBFAF7;
+  --ink:#241D14;
+  --ink-soft:#6E6353;
+  --gold:#B8892E;
+  --gold-deep:#96701F;
+  --gold-pale:#EBDDBB;
+  --line:#EFEAE0;
+  --shadow:0 30px 70px -30px rgba(36,29,20,.22);
+  --radius:24px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Figtree',system-ui,-apple-system,sans-serif;
+  background:var(--white);
+  color:var(--ink);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+.script{font-family:'Great Vibes',cursive;font-weight:400}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.gold{color:var(--gold)}
+.it{font-style:italic}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--gold-deep);font-weight:600;margin-bottom:18px;
+}
+.eyebrow::before,.eyebrow::after{content:"";width:26px;height:1px;background:var(--gold-pale)}
+section{position:relative}
+
+/* photo frames — gradient fallback shows if an image fails to load */
+.ph{
+  position:relative;overflow:hidden;background:linear-gradient(135deg,#F4EEE1,#EAE0CB);
+}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.ph:hover img{transform:scale(1.04)}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:4px;text-decoration:none;color:var(--gold-deep)}
+.logo .script{font-size:33px;line-height:1}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:14.5px;font-weight:500;color:var(--ink-soft);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold-deep)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 28px;border-radius:100px;
+  font-size:15px;font-weight:600;text-decoration:none;
+  transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;border:none;
+}
+.btn-gold{
+  background:linear-gradient(135deg,#C79A3E,#96701F);color:#fff;
+  box-shadow:0 10px 26px -10px rgba(150,112,31,.5);
+}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 32px -12px rgba(150,112,31,.55)}
+.nav-cta{padding:11px 22px;font-size:14px}
+@media(max-width:820px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:84px 0 100px}
+.hero-grid{display:grid;grid-template-columns:1fr .92fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(44px,6vw,74px);margin-bottom:8px}
+.hero .sub{font-size:19px;color:var(--ink-soft);max-width:44ch;margin:22px 0 32px}
+.hero-logo{display:flex;align-items:center;gap:2px;margin-bottom:24px}
+.hero-logo .script{font-size:54px;color:var(--gold);line-height:1}
+.sparkle{color:var(--gold);animation:tw 3.2s ease-in-out infinite;display:inline-block}
+@keyframes tw{0%,100%{opacity:.35;transform:scale(.9)}50%{opacity:1;transform:scale(1.08)}}
+.stores{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:24px}
+.store-badge{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--ink);color:#fff;
+  border-radius:14px;padding:11px 20px 11px 16px;
+  text-decoration:none;transition:transform .2s,box-shadow .2s;
+  box-shadow:0 12px 28px -14px rgba(36,29,20,.45);
+  min-width:200px;
+}
+.store-badge:hover{transform:translateY(-2px)}
+.store-badge .tag{font-size:10.5px;letter-spacing:.06em;opacity:.72;line-height:1.1;text-transform:uppercase}
+.store-badge .name{font-size:18px;font-weight:600;line-height:1.15}
+.hero-note{font-size:13.5px;color:var(--ink-soft);display:flex;align-items:center;gap:8px}
+
+/* hero photo collage */
+.collage{position:relative;height:560px}
+.collage .ph{position:absolute;border-radius:var(--radius);box-shadow:var(--shadow)}
+.c-main{top:0;right:0;width:72%;height:76%;border-radius:28px}
+.c-kid{left:0;bottom:0;width:52%;height:44%;border:6px solid #fff}
+.c-nails{right:6%;bottom:-4%;width:34%;height:30%;border:6px solid #fff}
+.c-chip{
+  position:absolute;top:8%;left:-4%;z-index:3;
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:12px 18px;box-shadow:0 16px 40px -18px rgba(36,29,20,.25);
+  display:flex;align-items:center;gap:10px;animation:float 6s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.c-chip .dot{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#C79A3E,#96701F);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px}
+.c-chip b{font-size:12.5px;display:block;line-height:1.2}
+.c-chip span{font-size:11px;color:var(--ink-soft)}
+.c-chip2{top:auto;bottom:34%;left:auto;right:-5%;animation-delay:1.4s}
+@media(max-width:960px){
+  .hero{padding:56px 0 80px}
+  .hero-grid{grid-template-columns:1fr;gap:56px;text-align:center}
+  .hero-logo,.stores,.hero-note{justify-content:center}
+  .hero .sub{margin-left:auto;margin-right:auto}
+  .collage{height:480px;max-width:520px;margin:0 auto;width:100%}
+  .c-chip{left:0}.c-chip2{right:0}
+}
+@media(max-width:480px){.collage{height:400px}}
+
+/* ---------- marquee strip ---------- */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;background:var(--off)}
+.strip-in{display:flex;gap:44px;justify-content:center;flex-wrap:wrap;align-items:center}
+.strip-item{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;display:flex;gap:10px;align-items:center}
+.strip-item::before{content:"✦";color:var(--gold);font-size:11px}
+
+/* ---------- ecosystem ---------- */
+.eco{padding:110px 0 96px}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 58px}
+.sec-head h2{font-size:clamp(34px,4.4vw,50px);margin-bottom:14px}
+.sec-head p{color:var(--ink-soft);font-size:17.5px}
+.eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.eco-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;transition:transform .25s,box-shadow .25s;
+  display:flex;flex-direction:column;
+}
+.eco-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.eco-card .ph{height:210px}
+.eco-body{padding:26px 26px 30px}
+.eco-body h3{font-size:22px;margin-bottom:3px}
+.eco-body .cat{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:10px}
+.eco-body p{font-size:14.5px;color:var(--ink-soft)}
+.eco-soon{
+  align-items:center;justify-content:center;
+  border:1.5px dashed var(--gold-pale);
+  color:var(--gold-deep);font-weight:500;font-size:15px;
+  flex-direction:row;gap:10px;min-height:200px;
+}
+@media(max-width:900px){.eco-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.eco-grid{grid-template-columns:1fr}}
+
+/* ---------- families feature band ---------- */
+.family{padding:20px 0 110px}
+.family-in{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;
+}
+.family .ph{border-radius:28px;height:520px;box-shadow:var(--shadow)}
+.family h2{font-size:clamp(32px,4vw,46px);margin-bottom:16px}
+.family .lead{color:var(--ink-soft);font-size:17px;margin-bottom:26px}
+.check-list{list-style:none}
+.check-list li{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.check-list li:last-child{border-bottom:none}
+.check-list .ck{
+  flex:none;width:26px;height:26px;border-radius:50%;margin-top:1px;
+  background:#F6EFDF;color:var(--gold-deep);font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.check-list b{font-weight:600}
+@media(max-width:900px){
+  .family-in{grid-template-columns:1fr;gap:44px}
+  .family .ph{height:380px}
+}
+
+/* ---------- features ---------- */
+.feat{padding:0 0 110px}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.feat-card{background:var(--off);border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px}
+.feat-num{
+  font-family:'Playfair Display',serif;font-style:italic;font-size:15px;
+  color:var(--gold);border:1px solid var(--gold-pale);border-radius:100px;
+  width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;background:#fff;
+}
+.feat-card h3{font-size:19.5px;margin:15px 0 8px}
+.feat-card p{color:var(--ink-soft);font-size:14px}
+@media(max-width:960px){.feat-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.feat-grid{grid-template-columns:1fr}}
+
+/* ---------- gallery ---------- */
+.gallery{padding:0 0 110px}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:16px}
+.gal-grid .ph{border-radius:18px}
+.g-tall{grid-row:span 2}
+.g-wide{grid-column:span 2}
+.gal-cap{
+  position:absolute;left:14px;bottom:14px;z-index:2;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(6px);
+  border-radius:100px;padding:7px 16px;font-size:12px;font-weight:600;letter-spacing:.04em;
+}
+@media(max-width:820px){.gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.g-tall{grid-column:span 2;grid-row:span 1}}
+
+/* ---------- payments ---------- */
+.pay{padding:0 0 110px}
+.pay-band{
+  background:var(--ink);color:#F0EAE0;border-radius:30px;
+  padding:58px 48px;text-align:center;
+}
+.pay-band h2{font-size:clamp(28px,3.6vw,40px);color:#fff;margin-bottom:10px}
+.pay-band h2 .gold{color:#D9B45E}
+.pay-band>p{color:#BFB4A2;max-width:52ch;margin:0 auto 32px;font-size:16px}
+.pay-logos{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.pay-chip{
+  background:rgba(255,255,255,.07);border:1px solid rgba(217,180,94,.35);
+  border-radius:100px;padding:9px 20px;font-size:13.5px;font-weight:500;color:#EDE3CB;
+}
+@media(max-width:600px){.pay-band{padding:44px 26px}}
+
+/* ---------- trust ---------- */
+.trust{padding:0 0 110px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.trust-item{text-align:center;padding:26px 16px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+.trust-ic{
+  width:58px;height:58px;margin:0 auto 16px;border-radius:50%;
+  background:var(--off);border:1px solid var(--gold-pale);
+  display:flex;align-items:center;justify-content:center;
+}
+.trust-item b{font-size:16px;display:block;margin-bottom:5px;font-weight:600}
+.trust-item span{font-size:13.5px;color:var(--ink-soft)}
+@media(max-width:820px){.trust-grid{grid-template-columns:1fr 1fr}}
+
+/* ---------- final cta ---------- -*/
+.cta{padding:0 0 110px}
+.cta-in{
+  position:relative;border-radius:30px;overflow:hidden;text-align:center;
+  padding:90px 30px;color:#fff;
+}
+.cta-in .ph{position:absolute;inset:0;border-radius:0}
+.cta-in .ph::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(rgba(24,18,10,.55),rgba(24,18,10,.68));
+}
+.cta-body{position:relative;z-index:2}
+.cta .script{font-size:clamp(58px,8vw,92px);color:#E9C87B;display:block;line-height:1.05}
+.cta h2{font-size:clamp(28px,3.8vw,44px);color:#fff;margin:4px 0 12px}
+.cta p{color:rgba(255,255,255,.85);font-size:17px;max-width:46ch;margin:0 auto 34px}
+.cta .stores{justify-content:center;margin-bottom:0}
+.cta .store-badge{background:#fff;color:var(--ink);box-shadow:0 16px 38px -16px rgba(0,0,0,.5)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);background:var(--off);padding:44px 0}
+.foot-in{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-in .script{font-size:30px;color:var(--gold)}
+.foot-links{display:flex;gap:26px;flex-wrap:wrap}
+.foot-links a{font-size:13.5px;color:var(--ink-soft);text-decoration:none}
+.foot-links a:hover{color:var(--gold-deep)}
+.foot-copy{font-size:12.5px;color:#A79A85}
+
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58LJSNP3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav>
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="Le Meow home">
+      <img src="images/logo.png" alt="Le Meow" style="height:44px;width:auto">
+    </a>
+    <div class="nav-links">
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#families">For Families</a>
+      <a href="#features">Features</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-logo rv">
+        <img src="images/logo.png" alt="Le Meow" style="height:80px;width:auto">
+      </div>
+      <h1 class="rv">Your World.<br><span class="gold it">Simplified.</span> <span class="sparkle" aria-hidden="true">✦</span></h1>
+      <p class="sub rv">One app for an easier, better everyday life. Sign up once and book beauty, home services, tuition, helpers and workshops across the entire Meow ecosystem.</p>
+
+      <div class="stores rv">
+        <a class="store-badge" href="https://apps.apple.com/my/app/le-meow/id6763483119" target="_blank" rel="noopener" aria-label="Download Le Meow on the App Store">
+          <svg width="24" height="28" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true">
+            <path d="M19.7 14.8c0-3.1 2.5-4.6 2.6-4.7-1.4-2.1-3.7-2.4-4.5-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1.1-2.1 0-4 1.2-5 3-2.2 3.7-.6 9.2 1.5 12.2 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 4-1s2.4 1 4 .9c1.7 0 2.7-1.5 3.7-3 1.2-1.7 1.7-3.4 1.7-3.5-.1 0-3.2-1.2-3.2-4.5zM16.6 5.6c.8-1 1.4-2.4 1.2-3.8-1.2 0-2.7.8-3.5 1.8-.8.9-1.5 2.3-1.3 3.7 1.4.1 2.8-.7 3.6-1.7z"/>
+          </svg>
+          <span><span class="tag">Download on the</span><br><span class="name">App Store</span></span>
+        </a>
+        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.meow.lemeow" target="_blank" rel="noopener" aria-label="Get Le Meow on Google Play">
+          <svg width="24" height="26" viewBox="0 0 26 28" fill="none" aria-hidden="true">
+            <path d="M2.4 1.6C2 2 1.8 2.7 1.8 3.5v21c0 .8.2 1.5.6 1.9L2.5 26.5 14.3 14.7v-.3L2.4 1.6z" fill="#EFE4CB"/>
+            <path d="M18.2 18.7 14.3 14.7v-.3l3.9-3.9 4.8 2.7c1.4.8 1.4 2 0 2.8l-4.8 2.7z" fill="#D9B45E"/>
+            <path d="M18.2 18.7 14.2 14.5 2.4 26.4c.5.5 1.2.5 2.1 0l13.7-7.7z" fill="#C7A24A" opacity=".85"/>
+            <path d="M18.2 9.3 4.5 1.6c-.9-.5-1.6-.4-2.1.1l11.8 12.8 4-5.2z" fill="#F5EEDF" opacity=".9"/>
+          </svg>
+          <span><span class="tag">Get it on</span><br><span class="name">Google Play</span></span>
+        </a>
+      </div>
+      <p class="hero-note rv">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1l2 4.2 4.6.6-3.4 3.2.9 4.6L8 11.4 3.9 13.6l.9-4.6L1.4 5.8 6 5.2 8 1z" fill="#B8892E"/></svg>
+        Free to download · Free to sign up · Loved by thousands in Singapore
+      </p>
+    </div>
+
+    <div class="collage rv">
+      <div class="ph c-main">
+        <img src="images/hero-woman.png" alt="Woman smiling while using the Le Meow app on her phone" loading="eager" onerror="this.remove()">
+      </div>
+      <div class="ph c-kid">
+        <img src="images/hero-child.png" alt="Child enjoying a learning activity" loading="lazy" onerror="this.remove()">
+      </div>
+      <div class="ph c-nails">
+        <img src="images/hero-manicure.png" alt="Manicure in progress at a nail studio" loading="lazy" onerror="this.remove()">
+      </div>
+      <div class="c-chip">
+        <div class="dot">✓</div>
+        <div><b>Booking confirmed</b><span>Gel Mani · Sat 10:00 AM</span></div>
+      </div>
+      <div class="c-chip c-chip2">
+        <div class="dot">✦</div>
+        <div><b>Member deal unlocked</b><span>20% off education</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ STRIP ═══════════ -->
+<div class="strip">
+  <div class="wrap strip-in">
+    <span class="strip-item">1000+ trusted services</span>
+    <span class="strip-item">Verified providers</span>
+    <span class="strip-item">Secure payments</span>
+    <span class="strip-item">24/7 support</span>
+    <span class="strip-item">Member-only deals</span>
+  </div>
+</div>
+
+<!-- ═══════════ ECOSYSTEM ═══════════ -->
+<section class="eco" id="ecosystem">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">One lifestyle ecosystem</div>
+      <h2>Every service you love, <span class="gold it">under one roof</span></h2>
+      <p>Services, experiences and solutions — all in one app, with a single Le Meow account.</p>
+    </div>
+    <div class="eco-grid">
+      <div class="eco-card rv">
+        <div class="ph"><img src="images/eco-hair.png" alt="Stylist working on a client's hair in a bright salon" loading="lazy" onerror="this.remove()"></div>
+        <div class="eco-body">
+          <h3>Meow Aesthetics</h3>
+          <div class="cat">Beauty · Hair · Nails · Face</div>
+          <p>Manicures, lashes, facials, IPL, spa, makeup and hair — beauty services and experiences you'll love.</p>
+        </div>
+      </div>
+      <div class="eco-card rv">
+        <div class="ph"><img src="images/eco-renovation.png" alt="Home renovation in progress" loading="lazy" onerror="this.remove()"></div>
+        <div class="eco-body">
+          <h3>Meow Renovations</h3>
+          <div class="cat">Home Services · Renovation</div>
+          <p>From a fresh coat of paint to full home makeovers, handled by verified professionals you can trust.</p>
+        </div>
+      </div>
+      <div class="eco-card rv">
+        <div class="ph"><img src="images/hero-child.png" alt="Child focused on a learning activity at home" loading="lazy" onerror="this.remove()"></div>
+        <div class="eco-body">
+          <h3>Meow Future Labs</h3>
+          <div class="cat">Education · Enrichment</div>
+          <p>Tuition and enrichment programmes for quality education, a brighter future and a better tomorrow.</p>
+        </div>
+      </div>
+      <div class="eco-card rv">
+        <div class="ph"><img src="images/eco-cleaner.png" alt="Professional cleaner at work in a home" loading="lazy" onerror="this.remove()"></div>
+        <div class="eco-body">
+          <h3>SureHands Agency</h3>
+          <div class="cat">Maid · Helper · Cleaning</div>
+          <p>Helper placement, care services and home deep cleaning — dependable hands for your household.</p>
+        </div>
+      </div>
+      <div class="eco-card rv">
+        <div class="ph"><img src="images/eco-baking.png" alt="Hands-on baking session in a warm kitchen" loading="lazy" onerror="this.remove()"></div>
+        <div class="eco-body">
+          <h3>MadBakes by Meow</h3>
+          <div class="cat">Workshops · Baking · Fun</div>
+          <p>Cookies and more, made to share and made with love. Book hands-on baking workshops for any occasion.</p>
+        </div>
+      </div>
+      <div class="eco-card eco-soon rv">
+        <span class="sparkle" aria-hidden="true">✦</span> More brands coming soon
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOR FAMILIES ═══════════ -->
+<section class="family" id="families">
+  <div class="wrap family-in">
+    <div class="ph rv">
+      <img src="images/families-mother-child.png" alt="Mother and child spending quality time together at home" loading="lazy" onerror="this.remove()">
+    </div>
+    <div class="rv">
+      <div class="eyebrow" style="margin-bottom:14px">Made for busy families</div>
+      <h2>More time for what <span class="gold it">matters most</span></h2>
+      <p class="lead">Le Meow takes the errands off your plate — so weekends are for family, not for juggling appointments.</p>
+      <ul class="check-list">
+        <li><span class="ck">✓</span><span><b>Mum's me-time, booked in seconds.</b> Hair, nails, facials and spa sessions around your schedule.</span></li>
+        <li><span class="ck">✓</span><span><b>The kids, growing every week.</b> Tuition, enrichment classes and fun baking workshops they'll ask to go back to.</span></li>
+        <li><span class="ck">✓</span><span><b>The home, handled.</b> Trusted helpers, deep cleaning and renovation pros — all verified, all in one place.</span></li>
+        <li><span class="ck">✓</span><span><b>One account for the whole household.</b> Track every booking, payment and deal from a single app.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FEATURES ═══════════ -->
+<section class="feat" id="features">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Everything you need. One app.</div>
+      <h2>Book services, activities, <span class="gold it">travel and more</span></h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card rv">
+        <span class="feat-num">1</span>
+        <h3>Discover instantly</h3>
+        <p>Explore 1000+ trusted services by category — beauty, tuition, home, helpers and workshops.</p>
+      </div>
+      <div class="feat-card rv">
+        <span class="feat-num">2</span>
+        <h3>Book in seconds</h3>
+        <p>Simple, smooth and secure booking with prices and reviews upfront. Confirm in a few taps.</p>
+      </div>
+      <div class="feat-card rv">
+        <span class="feat-num">3</span>
+        <h3>Stay organized</h3>
+        <p>Track upcoming, completed and cancelled bookings across every brand, all in one place.</p>
+      </div>
+      <div class="feat-card rv">
+        <span class="feat-num">4</span>
+        <h3>Exclusive deals</h3>
+        <p>Member-only deals, discounts and offers across the ecosystem, reserved for Le Meow members.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ GALLERY ═══════════ -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Life with Le Meow</div>
+      <h2>Moments made <span class="gold it">simple</span></h2>
+    </div>
+    <div class="gal-grid">
+      <div class="ph g-tall rv">
+        <img src="images/gallery-spa.jpg" alt="Relaxing spa treatment" loading="lazy">
+        <span class="gal-cap">Spa &amp; Wellness</span>
+      </div>
+      <div class="ph g-wide rv">
+        <img src="images/gallery-tuition.jpg" alt="Children learning together in class" loading="lazy">
+        <span class="gal-cap">Tuition &amp; Enrichment</span>
+      </div>
+      <div class="ph rv">
+        <img src="images/gallery-nails.jpg" alt="Fresh gel manicure" loading="lazy">
+        <span class="gal-cap">Nails</span>
+      </div>
+      <div class="ph rv">
+        <img src="images/gallery-baking.jpg" alt="Baking workshop" loading="lazy">
+        <span class="gal-cap">Baking Workshops</span>
+      </div>
+      <div class="ph g-wide rv">
+        <img src="images/gallery-renovation.jpg" alt="Home renovation" loading="lazy">
+        <span class="gal-cap">Home &amp; Renovation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PAYMENTS ═══════════ -->
+<section class="pay">
+  <div class="wrap">
+    <div class="pay-band rv">
+      <h2>Easy, <span class="gold">secure</span> payments</h2>
+      <p>Multiple secure payment options for your convenience — 19 ways to pay, powered by 2C2P.</p>
+      <div class="pay-logos">
+        <span class="pay-chip">Visa</span>
+        <span class="pay-chip">Mastercard</span>
+        <span class="pay-chip">Amex</span>
+        <span class="pay-chip">JCB</span>
+        <span class="pay-chip">UnionPay</span>
+        <span class="pay-chip">PayNow</span>
+        <span class="pay-chip">WeChat Pay</span>
+        <span class="pay-chip">Atome</span>
+        <span class="pay-chip">GrabPayLater</span>
+        <span class="pay-chip">ShopeePayLater</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TRUST ═══════════ -->
+<section class="trust" id="trust">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Safe. Secure. <span class="gold it">Trusted.</span></h2>
+      <p>100% secure payments &amp; verified service providers you can trust.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item rv">
+        <div class="trust-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#96701F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z"/><path d="M8.5 12l2.4 2.4L15.5 9.5"/></svg></div>
+        <b>Trusted &amp; verified providers</b>
+        <span>Every professional is screened before they appear in the app.</span>
+      </div>
+      <div class="trust-item rv">
+        <div class="trust-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#96701F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v2.5"/></svg></div>
+        <b>Secure payments</b>
+        <span>Bank-grade payment processing on every single booking.</span>
+      </div>
+      <div class="trust-item rv">
+        <div class="trust-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#96701F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2.5" y="13" width="4.5" height="7" rx="2"/><rect x="17" y="13" width="4.5" height="7" rx="2"/><path d="M19 20v1a2 2 0 0 1-2 2h-3"/></svg></div>
+        <b>24/7 customer support</b>
+        <span>Always here for you — just a WhatsApp message away.</span>
+      </div>
+      <div class="trust-item rv">
+        <div class="trust-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#96701F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.7 5.7 6.3.8-4.6 4.3 1.2 6.2L12 16.6 6.4 19.5l1.2-6.2L3 9l6.3-.8L12 2.5z"/></svg></div>
+        <b>Loved by thousands</b>
+        <span>Rated and reviewed by a growing community of members.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FINAL CTA ═══════════ -->
+<section class="cta" id="download">
+  <div class="wrap">
+    <div class="cta-in rv">
+      <div class="ph">
+        <img src="images/cta-portrait.png" alt="" loading="lazy" onerror="this.remove()">
+      </div>
+      <div class="cta-body">
+        <div style="display:inline-block;background:#fff;border-radius:18px;padding:10px 22px;margin:0 auto 16px">
+          <img src="images/logo.png" alt="Le Meow" style="height:60px;width:auto;display:block">
+        </div>
+        <h2>Download Le Meow today <span class="sparkle" aria-hidden="true">✦</span></h2>
+        <p>Everything you need. One app. Join thousands who have already simplified their world.</p>
+        <div class="stores">
+          <a class="store-badge" href="https://apps.apple.com/my/app/le-meow/id6763483119" target="_blank" rel="noopener" aria-label="Download Le Meow on the App Store">
+            <svg width="24" height="28" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true">
+              <path d="M19.7 14.8c0-3.1 2.5-4.6 2.6-4.7-1.4-2.1-3.7-2.4-4.5-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1.1-2.1 0-4 1.2-5 3-2.2 3.7-.6 9.2 1.5 12.2 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 4-1s2.4 1 4 .9c1.7 0 2.7-1.5 3.7-3 1.2-1.7 1.7-3.4 1.7-3.5-.1 0-3.2-1.2-3.2-4.5zM16.6 5.6c.8-1 1.4-2.4 1.2-3.8-1.2 0-2.7.8-3.5 1.8-.8.9-1.5 2.3-1.3 3.7 1.4.1 2.8-.7 3.6-1.7z"/>
+            </svg>
+            <span><span class="tag">Download on the</span><br><span class="name">App Store</span></span>
+          </a>
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.meow.lemeow" target="_blank" rel="noopener" aria-label="Get Le Meow on Google Play">
+            <svg width="24" height="26" viewBox="0 0 26 28" fill="none" aria-hidden="true">
+              <path d="M2.4 1.6C2 2 1.8 2.7 1.8 3.5v21c0 .8.2 1.5.6 1.9L2.5 26.5 14.3 14.7v-.3L2.4 1.6z" fill="#B8892E"/>
+              <path d="M18.2 18.7 14.3 14.7v-.3l3.9-3.9 4.8 2.7c1.4.8 1.4 2 0 2.8l-4.8 2.7z" fill="#D9B45E"/>
+              <path d="M18.2 18.7 14.2 14.5 2.4 26.4c.5.5 1.2.5 2.1 0l13.7-7.7z" fill="#96701F" opacity=".85"/>
+              <path d="M18.2 9.3 4.5 1.6c-.9-.5-1.6-.4-2.1.1l11.8 12.8 4-5.2z" fill="#C7A24A" opacity=".9"/>
+            </svg>
+            <span><span class="tag">Get it on</span><br><span class="name">Google Play</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="wrap foot-in">
+    <img src="images/logo.png" alt="Le Meow" style="height:44px;width:auto">
+    <div class="foot-links">
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#families">For Families</a>
+      <a href="#features">Features</a>
+      <a href="#">Help Center</a>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </div>
+    <span class="foot-copy">© 2026 Le Meow · A Meow Group company · Singapore</span>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+},{threshold:.1});
+document.querySelectorAll('.rv').forEach((el,i)=>{
+  el.style.transitionDelay = (i%4)*70+'ms';
+  io.observe(el);
+});
+</script>
+</body>
+</html>
