@@ -708,13 +708,15 @@
         border: 1px solid var(--hairline-soft);
         cursor: pointer;
       }
-      .hl img {
+      .hl video {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: transform 1s var(--ease);
+        position: relative;
+        z-index: 1;
       }
-      .hl:hover img {
+      .hl:hover video {
         transform: scale(1.06);
       }
       .hl::after {
@@ -2088,7 +2090,8 @@
           </h2>
           <p>Five fresh highlights. Updated every week.</p>
         </div>
-        <div class="hl-row">
+        <div class="hl-row" id="hl-row-container"></div>
+        <!-- <div class="hl-row" id="hl-row-container">
           <a
             class="hl rv"
             href="#download"
@@ -2209,7 +2212,7 @@
               ><small>Le Destin</small><b>Curated Experiences</b></span
             >
           </a>
-        </div>
+        </div> -->
         <div class="hl-more rv"><a href="#download">See all highlights</a></div>
       </div>
     </section>
@@ -2238,454 +2241,14 @@
           <p>The more you Le Meow, the more Le Meow gives back.</p>
         </div>
 
-        <div class="tier-nav rv" role="tablist" aria-label="Membership tiers">
-          <button
-            class="tier-btn t-white"
-            role="tab"
-            aria-selected="true"
-            data-tier="white"
-          >
-            White
-          </button>
-          <button
-            class="tier-btn t-silver"
-            role="tab"
-            aria-selected="false"
-            data-tier="silver"
-          >
-            Silver
-          </button>
-          <button
-            class="tier-btn t-gold"
-            role="tab"
-            aria-selected="false"
-            data-tier="gold"
-          >
-            Gold
-          </button>
-          <button
-            class="tier-btn t-black"
-            role="tab"
-            aria-selected="false"
-            data-tier="black"
-          >
-            Black
-          </button>
-        </div>
+        <div
+          class="tier-nav rv"
+          role="tablist"
+          aria-label="Membership tiers"
+          id="tierNav"
+        ></div>
 
-        <div class="tier-stage rv">
-          <!-- WHITE -->
-          <div
-            class="tier-card tc-white active"
-            data-panel="white"
-            role="tabpanel"
-          >
-            <span class="shimmer"></span>
-            <div class="tc-top">
-              <div class="tc-name display">
-                White<em>Welcome to Le Meow</em>
-              </div>
-              <div class="tc-crown">
-                <svg
-                  width="30"
-                  height="30"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#B7A784"
-                  stroke-width="1.3"
-                >
-                  <path d="M3 17l1.5-9L9 12l3-7 3 7 4.5-4L21 17z" />
-                  <path d="M4 20h16" />
-                </svg>
-              </div>
-            </div>
-            <div class="tc-benefits">
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path
-                    d="M20 12v9H4v-9M2 7h20v5H2zM12 7v14M12 7c-2-4-7-4-7-1s5 1 7 1zm0 0c2-4 7-4 7-1s-5 1-7 1z"
-                  /></svg
-                ><b>Earn Rewards</b
-                ><span>Collect points &amp; exclusive rewards</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M19 8v6M22 11h-6" /></svg
-                ><b>$10 Referral Bonus</b><span>Share &amp; earn together</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path
-                    d="M4 21h16M5 21v-8h14v8M12 5v3M9 3v2M15 3v2M5 13c0-2 2-5 7-5s7 3 7 5"
-                  /></svg
-                ><b>$15 Birthday Treat</b
-                ><span>A special treat on your day</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <circle cx="12" cy="12" r="9" />
-                  <path d="M12 7v5l3 3" /></svg
-                ><b>48H Cancellation</b><span>Cancel up to 48 hours ahead</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path
-                    d="M3 12a9 9 0 0 1 18 0v5a2 2 0 0 1-2 2h-2v-6h4M3 12v5a2 2 0 0 0 2 2h2v-6H3"
-                  /></svg
-                ><b>Expedited Support</b
-                ><span>Faster response, priority care</span>
-              </div>
-            </div>
-          </div>
-          <!-- SILVER -->
-          <div
-            class="tier-card tc-silver"
-            data-panel="silver"
-            role="tabpanel"
-            hidden
-          >
-            <span class="shimmer"></span>
-            <div class="tc-top">
-              <div class="tc-name display">
-                Silver<em>More Ways to Save</em>
-              </div>
-              <div class="tc-crown">
-                <svg
-                  width="30"
-                  height="30"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#8A9099"
-                  stroke-width="1.3"
-                >
-                  <path d="M3 17l1.5-9L9 12l3-7 3 7 4.5-4L21 17z" />
-                  <path d="M4 20h16" />
-                </svg>
-              </div>
-            </div>
-            <div class="tc-benefits">
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path
-                    d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2V3.4h10l7.2 7.2a2 2 0 0 1 0 2.8z"
-                  />
-                  <circle cx="7.5" cy="7.5" r="1.2" /></svg
-                ><b>Up to 2% Off Bookings</b
-                ><span>Save more on every booking</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <ellipse cx="12" cy="6" rx="7" ry="3" />
-                  <path
-                    d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"
-                  /></svg
-                ><b>Earn 1.25X Points</b><span>Earn more with every spend</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M19 8v6M22 11h-6" /></svg
-                ><b>$15 Referral Bonus</b><span>Share &amp; earn together</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path
-                    d="M4 21h16M5 21v-8h14v8M12 5v3M9 3v2M15 3v2M5 13c0-2 2-5 7-5s7 3 7 5"
-                  /></svg
-                ><b>$20 Birthday Treat</b
-                ><span>A special treat on your day</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <circle cx="12" cy="12" r="9" />
-                  <path d="M12 7v5l3 3" /></svg
-                ><b>24H Cancellation</b><span>Cancel up to 24 hours ahead</span>
-              </div>
-            </div>
-          </div>
-          <!-- GOLD -->
-          <div
-            class="tier-card tc-gold"
-            data-panel="gold"
-            role="tabpanel"
-            hidden
-          >
-            <span class="shimmer"></span>
-            <div class="tc-top">
-              <div class="tc-name display">Gold<em>You're a Priority</em></div>
-              <div class="tc-crown">
-                <svg
-                  width="30"
-                  height="30"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#A87418"
-                  stroke-width="1.3"
-                >
-                  <path d="M3 17l1.5-9L9 12l3-7 3 7 4.5-4L21 17z" />
-                  <path d="M4 20h16" />
-                </svg>
-              </div>
-            </div>
-            <div class="tc-benefits">
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path
-                    d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2V3.4h10l7.2 7.2a2 2 0 0 1 0 2.8z"
-                  />
-                  <circle cx="7.5" cy="7.5" r="1.2" /></svg
-                ><b>Up to 4% Off Bookings</b
-                ><span>Save more on every booking</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <ellipse cx="12" cy="6" rx="7" ry="3" />
-                  <path
-                    d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"
-                  /></svg
-                ><b>Earn 1.5X Points</b><span>Earn more with every spend</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path
-                    d="M4 21h16M5 21v-8h14v8M12 5v3M9 3v2M15 3v2M5 13c0-2 2-5 7-5s7 3 7 5"
-                  /></svg
-                ><b>$30 Birthday Treat</b
-                ><span>A special treat on your day</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <rect x="3" y="5" width="18" height="16" rx="2" />
-                  <path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4" /></svg
-                ><b>Same-Day Booking</b
-                ><span>Book &amp; confirm on the same day</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path
-                    d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"
-                  />
-                  <circle cx="9" cy="12" r=".8" fill="currentColor" />
-                  <circle cx="13" cy="12" r=".8" fill="currentColor" />
-                  <circle cx="17" cy="12" r=".8" fill="currentColor" /></svg
-                ><b>Concierge Chat</b
-                ><span>Personalised help just for you</span>
-              </div>
-            </div>
-          </div>
-          <!-- BLACK -->
-          <div
-            class="tier-card tc-black"
-            data-panel="black"
-            role="tabpanel"
-            hidden
-          >
-            <span class="shimmer"></span>
-            <div class="tc-top">
-              <div class="tc-name display" style="color: #f4ecdc">
-                Black<em>Our VIP Tier</em>
-              </div>
-              <div class="tc-crown">
-                <svg
-                  width="30"
-                  height="30"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#E3C77F"
-                  stroke-width="1.3"
-                >
-                  <path d="M3 17l1.5-9L9 12l3-7 3 7 4.5-4L21 17z" />
-                  <path d="M4 20h16" />
-                </svg>
-              </div>
-            </div>
-            <div class="tc-benefits">
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path
-                    d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2V3.4h10l7.2 7.2a2 2 0 0 1 0 2.8z"
-                  />
-                  <circle cx="7.5" cy="7.5" r="1.2" /></svg
-                ><b>Up to 6% Off</b><span>Save the most on every booking</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <ellipse cx="12" cy="6" rx="7" ry="3" />
-                  <path
-                    d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"
-                  /></svg
-                ><b>Earn 2X Points</b
-                ><span>Maximise points on every spend</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path
-                    d="M4 21h16M5 21v-8h14v8M12 5v3M9 3v2M15 3v2M5 13c0-2 2-5 7-5s7 3 7 5"
-                  /></svg
-                ><b>$50 Birthday Treat</b
-                ><span>A premium treat on your day</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path
-                    d="M3 12a9 9 0 0 1 18 0v5a2 2 0 0 1-2 2h-2v-6h4M3 12v5a2 2 0 0 0 2 2h2v-6H3"
-                  /></svg
-                ><b>VIP Support</b><span>Dedicated VIP support for you</span>
-              </div>
-              <div class="tc-b">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                >
-                  <path
-                    d="M20 12v9H4v-9M2 7h20v5H2zM12 7v14M12 7c-2-4-7-4-7-1s5 1 7 1zm0 0c2-4 7-4 7-1s-5 1-7 1z"
-                  /></svg
-                ><b>Black-Only Surprises</b
-                ><span>Exclusive surprises just for you</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="tier-stage rv" id="tierStage"></div>
         <div class="mem-cta rv">
           <a href="#download" class="btn btn-gold">Explore Membership</a>
         </div>
@@ -3565,37 +3128,6 @@
           io.observe(el);
         });
 
-        /* tier selector */
-        var tierBtns = document.querySelectorAll(".tier-btn");
-        var panels = document.querySelectorAll(".tier-card");
-        tierBtns.forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            var t = btn.dataset.tier;
-            tierBtns.forEach(function (b) {
-              b.setAttribute("aria-selected", b === btn);
-            });
-            panels.forEach(function (p) {
-              var on = p.dataset.panel === t;
-              p.classList.toggle("active", on);
-              if (on) {
-                p.removeAttribute("hidden");
-              } else {
-                p.setAttribute("hidden", "");
-              }
-            });
-          });
-          btn.addEventListener("keydown", function (ev) {
-            if (ev.key === "ArrowRight" || ev.key === "ArrowLeft") {
-              var arr = Array.prototype.slice.call(tierBtns);
-              var i = arr.indexOf(btn) + (ev.key === "ArrowRight" ? 1 : -1);
-              if (i < 0) i = arr.length - 1;
-              if (i >= arr.length) i = 0;
-              arr[i].focus();
-              arr[i].click();
-            }
-          });
-        });
-
         /* count-up */
         function countUp(el) {
           var target = +el.dataset.count,
@@ -3662,6 +3194,291 @@
           aiIo.observe(chat);
           document.getElementById("aiReplay").addEventListener("click", playAI);
         }
+      })();
+    </script>
+    <!-- Setup dynamic Featured Highlights videos -->
+    <script>
+      <!--  -->
+      async function fetchHighlightsVideos(page) {
+        const url = `https://meow-service-test.flutterclone.com/api/public/featured-highlights/list?per_page=5&page=1&order_by=created_at&order=desc&is_active=1`;
+        try {
+          const res = await fetch(url, {
+            headers: {
+              "X-Featured-Highlights-Secret":
+                "pfhs_fe6cc95adcd3a7dc76908e9fb15c0572e7ba4d060deb9208",
+            },
+          });
+          if (!res.ok) throw new Error("Failed to fetch helpers");
+          const json = await res.json();
+          console.log(json);
+          return json && json?.data?.data ? json.data.data : [];
+        } catch (err) {
+          console.log("HELPERS LIST GET ERROR /", err);
+          return [];
+        }
+      }
+
+      <!-- Play video -->
+      const playVideo = (e) => {
+        const playElement = e.querySelector(".hl-play");
+        const vidElement = e.querySelector("video");
+
+        if (!vidElement) return;
+
+        // Video is currently playing → pause it
+        if (!vidElement.paused && !vidElement.ended) {
+          vidElement.pause();
+          playElement.style.display = "flex";
+          return;
+        }
+
+        // Video has ended → restart from beginning and play
+        if (vidElement.ended) {
+          vidElement.currentTime = 0;
+          vidElement.play();
+          playElement.style.display = "none";
+          return;
+        }
+
+        // Video is paused/not started → play it
+        vidElement.play();
+        playElement.style.display = "none";
+      };
+
+      <!-- --- -->
+      (async () => {
+        const highlightsContainer = document.getElementById("hl-row-container");
+
+        <!-- Fetch data -->
+        const highlightsVideos = await fetchHighlightsVideos();
+        if (highlightsVideos.length === 0) return;
+        const prepareCards = highlightsVideos.map((e, index) => {
+          return `
+          <span class="hl rv in" href="#download" aria-label="Meow Aesthetics — Glow Up Deals" id="${index}-hl-ev" onClick="playVideo(this)">
+           <!-- <img src="${e.thumbnail_url}" alt="${e.title}" loading="lazy" data-fall="${e.brand_name}"> -->
+           <span class="hl-play"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+             <path d="M8 5v14l11-7z"></path></svg></span>
+             <span class="hl-txt"><small>${e.brand_name}</small><b>${e.title}</b></span>
+             <video src="${e.video_url}" alt="${e.title}" loading="lazy" data-fall="${e.brand_name}">
+            </span>
+          `;
+        }); 
+        highlightsContainer.innerHTML = prepareCards.join("");
+      })();
+    </script>
+    <!-- Setup dynamic Membership Tiers -->
+    <script>
+      async function fetchMembershipTiers() {
+        const url =
+          "https://meow-service-test.flutterclone.com/api/user/membership-tiers";
+        try {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error("Failed to fetch membership tiers");
+          const json = await res.json();
+          return json && json?.data?.tiers ? json.data.tiers : [];
+        } catch (err) {
+          console.log("MEMBERSHIP TIERS FETCH ERROR:", err);
+          return [];
+        }
+      }
+
+      const tierColors = {
+        white: {
+          stroke: "#B7A784",
+          gradient: "linear-gradient(135deg, #d9cdb6, #b7a784)",
+          cardBg: "linear-gradient(150deg, #ffffff, #f4eee1)",
+        },
+        silver: {
+          stroke: "#8A9099",
+          gradient: "linear-gradient(135deg, #b9bec6, #8a9099)",
+          cardBg: "linear-gradient(150deg, #fbfcfd, #e4e7eb)",
+        },
+        gold: {
+          stroke: "#A87418",
+          gradient:
+            "linear-gradient(135deg, var(--pale-gold), var(--deep-gold))",
+          cardBg: "linear-gradient(150deg, #fbf1da, #ebd190)",
+        },
+        black: {
+          stroke: "#E3C77F",
+          gradient: "linear-gradient(135deg, #2a2620, #0f0e0c)",
+          cardBg: "linear-gradient(150deg, #211d17, #0e0d0b)",
+        },
+      };
+
+      const tierSubtitles = {
+        white: "Welcome to Le Meow",
+        silver: "More Ways to Save",
+        gold: "You're a Priority",
+        black: "Our VIP Tier",
+      };
+
+      function getBenefits(tier) {
+        const benefits = [];
+        if (parseFloat(tier.blanket_discount_percent) > 0) {
+          benefits.push({
+            icon: "tag",
+            title: `Up to ${parseFloat(tier.blanket_discount_percent)}% Off`,
+            desc: "Save more on every booking",
+          });
+        }
+        benefits.push({
+          icon: "coin",
+          title: `Earn ${parseFloat(tier.referral_bonus_percent) >= 20 ? (parseFloat(tier.referral_bonus_percent) / 10).toFixed(1) : "1.25"}X Points`,
+          desc: "Earn more with every spend",
+        });
+        if (parseFloat(tier.referral_bonus_amount) > 0) {
+          benefits.push({
+            icon: "user-plus",
+            title: `$${parseFloat(tier.referral_bonus_amount).toFixed(0)} Referral Bonus`,
+            desc: "Share & earn together",
+          });
+        } else if (parseFloat(tier.referral_bonus_percent) > 0) {
+          benefits.push({
+            icon: "user-plus",
+            title: `${parseFloat(tier.referral_bonus_percent).toFixed(0)}% Referral Bonus`,
+            desc: "Share & earn together",
+          });
+        }
+        if (parseFloat(tier.birthday_voucher_amount) > 0) {
+          benefits.push({
+            icon: "cake",
+            title: `$${parseFloat(tier.birthday_voucher_amount).toFixed(0)} Birthday Treat`,
+            desc: "A special treat on your day",
+          });
+        }
+        if (tier.free_cancellation_hours > 0) {
+          benefits.push({
+            icon: "clock",
+            title: `${tier.free_cancellation_hours}H Cancellation`,
+            desc: `Cancel up to ${tier.free_cancellation_hours} hours ahead`,
+          });
+        }
+        if (tier.support_card_title) {
+          benefits.push({
+            icon: "support",
+            title: tier.support_card_title,
+            desc: "Faster response, priority care",
+          });
+        }
+        if (tier.allow_same_day_booking) {
+          benefits.push({
+            icon: "calendar",
+            title: "Same-Day Booking",
+            desc: "Book & confirm on the same day",
+          });
+        }
+        if (tier.has_concierge_chat) {
+          benefits.push({
+            icon: "chat",
+            title: "Concierge Chat",
+            desc: "Personalised help just for you",
+          });
+        }
+        if (tier.has_black_only_surprises) {
+          benefits.push({
+            icon: "gift",
+            title: "Black-Only Surprises",
+            desc: "Exclusive surprises just for you",
+          });
+        }
+        if (tier.has_early_access) {
+          benefits.push({
+            icon: "rocket",
+            title: "Early Access",
+            desc: "Be the first to explore new features",
+          });
+        }
+        return benefits.slice(0, 5);
+      }
+
+      const benefitIcons = {
+        tag: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2V3.4h10l7.2 7.2a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg>`,
+        coin: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>`,
+        "user-plus": `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>`,
+        cake: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21h16M5 21v-8h14v8M12 5v3M9 3v2M15 3v2M5 13c0-2 2-5 7-5s7 3 7 5"/></svg>`,
+        clock: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>`,
+        support: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12a9 9 0 0 1 18 0v5a2 2 0 0 1-2 2h-2v-6h4M3 12v5a2 2 0 0 0 2 2h2v-6H3"/></svg>`,
+        calendar: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></svg>`,
+        chat: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"/><circle cx="9" cy="12" r=".8" fill="currentColor"/><circle cx="13" cy="12" r=".8" fill="currentColor"/><circle cx="17" cy="12" r=".8" fill="currentColor"/></svg>`,
+        gift: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 7v14M12 7c-2-4-7-4-7-1s5 1 7 1zm0 0c2-4 7-4 7-1s-5 1-7 1z"/></svg>`,
+        rocket: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>`,
+      };
+
+      (async () => {
+        const tierNav = document.getElementById("tierNav");
+        const tierStage = document.getElementById("tierStage");
+        if (!tierNav || !tierStage) return;
+
+        const tiers = await fetchMembershipTiers();
+        if (tiers.length === 0) return;
+
+        tierNav.innerHTML = tiers
+          .map(
+            (tier, i) =>
+              `<button class="tier-btn t-${tier.slug}" role="tab" aria-selected="${i === 0 ? "true" : "false"}" data-tier="${tier.slug}">${tier.name}</button>`,
+          )
+          .join("");
+
+        tierStage.innerHTML = tiers
+          .map((tier, i) => {
+            const colors = tierColors[tier.slug] || tierColors.white;
+            const subtitle = tierSubtitles[tier.slug] || "Your membership tier";
+            const benefits = getBenefits(tier);
+            const isBlack = tier.slug === "black";
+            return `
+            <div class="tier-card tc-${tier.slug} ${i === 0 ? "active" : ""}" data-panel="${tier.slug}" role="tabpanel" ${i !== 0 ? "hidden" : ""}>
+              <span class="shimmer"></span>
+              <div class="tc-top">
+                <div class="tc-name display" ${isBlack ? 'style="color: #f4ecdc"' : ""}>${tier.name}<em>${subtitle}</em></div>
+                ${tier.badge_image_url ? `<div class="tc-crown"><img src="${tier.badge_image_url}" alt="${tier.name} badge" style="width:100%;height:100%;object-fit:contain;border-radius:50%;"></div>` : `<div class="tc-crown"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="${colors.stroke}" stroke-width="1.3"><path d="M3 17l1.5-9L9 12l3-7 3 7 4.5-4L21 17z"/><path d="M4 20h16"/></svg></div>`}
+              </div>
+              <div class="tc-benefits">
+                ${benefits
+                  .map(
+                    (b) => `
+                  <div class="tc-b">
+                    ${benefitIcons[b.icon] || benefitIcons.tag}
+                    <b>${b.title}</b>
+                    <span>${b.desc}</span>
+                  </div>
+                `,
+                  )
+                  .join("")}
+              </div>
+            </div>`;
+          })
+          .join("");
+
+        const tierBtns = tierNav.querySelectorAll(".tier-btn");
+        const panels = tierStage.querySelectorAll(".tier-card");
+        tierBtns.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var t = btn.dataset.tier;
+            tierBtns.forEach(function (b) {
+              b.setAttribute("aria-selected", b === btn);
+            });
+            panels.forEach(function (p) {
+              var on = p.dataset.panel === t;
+              p.classList.toggle("active", on);
+              if (on) {
+                p.removeAttribute("hidden");
+              } else {
+                p.setAttribute("hidden", "");
+              }
+            });
+          });
+          btn.addEventListener("keydown", function (ev) {
+            if (ev.key === "ArrowRight" || ev.key === "ArrowLeft") {
+              var arr = Array.prototype.slice.call(tierBtns);
+              var idx = arr.indexOf(btn) + (ev.key === "ArrowRight" ? 1 : -1);
+              if (idx < 0) idx = arr.length - 1;
+              if (idx >= arr.length) idx = 0;
+              arr[idx].focus();
+              arr[idx].click();
+            }
+          });
+        });
       })();
     </script>
   </body>
