@@ -695,12 +695,14 @@
 
       /* ---------- highlights ---------- */
       .hl-row {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 18px;
       }
       .hl {
         position: relative;
+        flex: 0 1 calc((100% - 4 * 18px) / 5);
         border-radius: var(--r-md);
         overflow: hidden;
         aspect-ratio: 9/14;
@@ -1622,11 +1624,8 @@
           max-width: 560px;
           margin: 0 auto;
         }
-        .hl-row {
-          grid-template-columns: repeat(3, 1fr);
-        }
-        .hl:nth-child(n + 4) {
-          display: none;
+        .hl {
+          flex-basis: calc((100% - 2 * 18px) / 3);
         }
         .tc-benefits {
           grid-template-columns: repeat(3, 1fr);
@@ -1744,10 +1743,10 @@
           flex-wrap: wrap;
         }
         .hl-row {
-          grid-template-columns: repeat(2, 1fr);
+          gap: 14px;
         }
-        .hl:nth-child(3) {
-          display: none;
+        .hl {
+          flex-basis: calc((100% - 14px) / 2);
         }
         .tc-benefits {
           grid-template-columns: 1fr 1fr;
