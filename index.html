@@ -236,9 +236,16 @@
         align-items: center;
         gap: 8px;
         white-space: nowrap;
+        min-width: 0;
+        flex-shrink: 1;
       }
       .logo svg {
         flex: none;
+      }
+      .logo-img {
+        height: 60px;
+        width: auto;
+        max-width: 100%;
       }
       .nav-links {
         display: flex;
@@ -1635,6 +1642,9 @@
         .nav-links {
           display: none;
         }
+        .logo-img {
+          height: 46px;
+        }
         .burger {
           display: flex;
         }
@@ -1703,9 +1713,14 @@
         }
         .nav-in {
           height: 64px;
+          padding: 0 16px;
+          gap: 12px;
         }
         .logo {
           font-size: 26px;
+        }
+        .logo-img {
+          height: 38px;
         }
         .m-menu {
           top: 64px;
@@ -1795,11 +1810,7 @@
         <a href="#top" class="logo script" aria-label="Le Meow home">
           <!-- <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 9l2-5 3.5 3h5L18 4l2 5c1 5-2 11-8 11S3 14 4 9z"/><circle cx="9.5" cy="12" r=".7" fill="currentColor"/><circle cx="14.5" cy="12" r=".7" fill="currentColor"/></svg>
       Le Meow -->
-          <img
-            src="images/logo.png"
-            alt="Le Meow"
-            style="height: 60px; width: auto"
-          />
+          <img src="images/logo.png" alt="Le Meow" class="logo-img" />
         </a>
         <nav class="nav-links" aria-label="Primary">
           <a href="#discover">Discover</a>
