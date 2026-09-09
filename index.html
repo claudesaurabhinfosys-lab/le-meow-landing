@@ -1803,6 +1803,177 @@
       .m-cta {
         display: none;
       }
+
+      /* ---------- contact form ---------- */
+      .contact-card {
+        position: relative;
+        max-width: 820px;
+        margin: 0 auto;
+        border: 1px solid var(--hairline);
+        border-radius: var(--r-hero);
+        padding: 56px 48px;
+        background: #fff;
+        box-shadow: 0 30px 80px rgba(30, 22, 14, 0.08);
+        overflow: hidden;
+      }
+      .contact-card::before {
+        content: "";
+        position: absolute;
+        inset: 12px;
+        border: 1px solid var(--hairline-soft);
+        border-radius: calc(var(--r-hero) - 10px);
+        pointer-events: none;
+      }
+      @media (max-width: 680px) {
+        .contact-card {
+          padding: 36px 20px;
+        }
+      }
+      .lm-contact-form {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+      .lm-form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      @media (max-width: 680px) {
+        .lm-form-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .lm-field-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .lm-field-full,
+      .lm-type-textarea {
+        grid-column: 1 / -1;
+      }
+      .lm-label {
+        font-size: 12.5px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .lm-req {
+        color: #d32f2f;
+      }
+      .lm-input,
+      .lm-field-group select,
+      .lm-field-group textarea {
+        width: 100%;
+        padding: 13px 18px;
+        border: 1px solid var(--hairline);
+        border-radius: var(--r-sm);
+        background: #fff;
+        font-family: inherit;
+        font-size: 15px;
+        color: var(--ink);
+        transition: border-color 0.25s, box-shadow 0.25s;
+        outline: none;
+        box-sizing: border-box;
+      }
+      .lm-input:focus,
+      .lm-field-group select:focus,
+      .lm-field-group textarea:focus {
+        border-color: var(--gold);
+        box-shadow: 0 0 0 3px rgba(198, 145, 46, 0.18);
+      }
+      .lm-field-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+      .lm-checkbox-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding-top: 4px;
+      }
+      .lm-chk-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14.5px;
+        color: var(--ink);
+        cursor: pointer;
+      }
+      .lm-chk-label input[type="checkbox"] {
+        accent-color: var(--gold);
+        width: 17px;
+        height: 17px;
+      }
+      .lm-field-error {
+        font-size: 12px;
+        color: #d32f2f;
+        margin-top: 2px;
+      }
+      .lm-field-group.has-error .lm-input,
+      .lm-field-group.has-error select,
+      .lm-field-group.has-error textarea {
+        border-color: #d32f2f;
+        background-color: #fff9f9;
+      }
+      .lm-feedback {
+        padding: 16px 20px;
+        border-radius: var(--r-sm);
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+      .lm-feedback-success {
+        background: #f1f8e9;
+        color: #2e7d32;
+        border: 1px solid #c8e6c9;
+      }
+      .lm-feedback-error {
+        background: #fbe9e7;
+        color: #c62828;
+        border: 1px solid #ffccbc;
+      }
+      .lm-submit-wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+      }
+      .lm-submit-btn {
+        min-width: 220px;
+      }
+      .lm-loading,
+      .lm-empty,
+      .lm-error-box {
+        text-align: center;
+        padding: 40px 20px;
+        color: var(--muted);
+      }
+      .lm-spinner,
+      .lm-mini-spinner {
+        border: 2.5px solid rgba(198, 145, 46, 0.2);
+        border-top-color: var(--gold);
+        border-radius: 50%;
+        animation: lmSpin 0.8s linear infinite;
+      }
+      .lm-spinner {
+        width: 34px;
+        height: 34px;
+        margin: 0 auto 16px;
+      }
+      .lm-mini-spinner {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+      @keyframes lmSpin {
+        to { transform: rotate(360deg); }
+      }
     </style>
   </head>
   <body>
@@ -1822,6 +1993,7 @@
           <a href="#wallet">Wallet</a>
           <a href="#gift">Gift</a>
           <a href="#whats-new">What's New</a>
+          <a href="#contact">Contact</a>
         </nav>
         <div style="display: flex; align-items: center; gap: 10px">
           <a href="#download" class="btn btn-gold">Get Le Meow</a>
@@ -1843,6 +2015,7 @@
         <a href="#wallet">Wallet</a>
         <a href="#gift">Gift</a>
         <a href="#whats-new">What's New</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
@@ -2973,6 +3146,34 @@
       </div>
     </section>
 
+    <!-- ══════════ CONTACT & ENQUIRIES ══════════ -->
+    <section class="section" id="contact">
+      <svg
+        class="floral"
+        style="top: 20px; left: -50px; width: 260px"
+        viewBox="0 0 200 200"
+        fill="none"
+        stroke="currentColor"
+        stroke-width=".8"
+        aria-hidden="true"
+      >
+        <path d="M30 170 C 60 120, 40 80, 80 50 C 100 35, 130 40, 140 20" />
+        <circle cx="80" cy="50" r="3" />
+      </svg>
+      <div class="wrap">
+        <div class="sec-head rv">
+          <span class="eyebrow center">Get in Touch</span>
+          <h2 class="display">Concierge &amp; <span class="gold-i">Enquiries</span></h2>
+          <p>
+            Have questions regarding Le Meow, partnership opportunities, or corporate lifestyle memberships? Send us an enquiry below and our concierge team will assist you.
+          </p>
+        </div>
+        <div class="contact-card rv" id="leMeowContactContainer">
+          <!-- Populated by contact.js -->
+        </div>
+      </div>
+    </section>
+
     <!-- ══════════ FINAL CTA ══════════ -->
     <section class="section" id="download">
       <svg
@@ -3073,6 +3274,7 @@
             <a href="#membership">Membership</a>
             <a href="#wallet">Wallet</a>
             <a href="#gift">Gift Vouchers</a>
+            <a href="#contact">Contact</a>
             <a href="#download">Download</a>
           </nav>
           <small>© 2026 Le Meow · Part of the Meow ecosystem · Singapore</small>
@@ -3493,5 +3695,6 @@
         });
       })();
     </script>
+    <script src="contact.js"></script>
   </body>
 </html>
