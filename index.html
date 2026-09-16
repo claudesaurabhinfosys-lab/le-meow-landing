@@ -529,6 +529,11 @@
         font-size: 14px;
       }
 
+      /* Mobile uses its own composition: video first, then the hero copy. */
+      .mobile-hero {
+        display: none;
+      }
+
 
 
       /* image fallback */
@@ -1993,51 +1998,99 @@
         .m-menu {
           top: 64px;
         }
-        .hero {
-          min-height: 100vh;
-          min-height: 100svh;
-          height: auto;
-          padding-top: 100px;
-          padding-bottom: 60px;
+        .hero--desktop {
+          display: none;
         }
-        .hero-layer {
+        .mobile-hero {
+          display: block;
           background:
-            linear-gradient(180deg,
-              rgba(8, 6, 4, 0.42) 0%,
-              rgba(8, 6, 4, 0.30) 50%,
-              rgba(8, 6, 4, 0.48) 100%
-            ),
-            linear-gradient(90deg,
-              rgba(8, 6, 4, 0.58) 0%,
-              rgba(8, 6, 4, 0.38) 100%
-            );
+            radial-gradient(circle at 50% 0%, rgba(229, 197, 123, 0.22), transparent 38%),
+            #fffdf9;
         }
-        .hero h1 {
+        .mobile-hero-video {
+          display: block;
+          width: 100%;
+          /* height: 38svh; */
+          min-height: 230px;
+          max-height: 360px;
+          margin-top: 64px;
+          object-fit: cover;
+          object-position: 70% center;
+          background: #0d0a07;
+        }
+        .mobile-hero-copy {
+          padding: 46px 10px 58px;
+          text-align: center;
+        }
+        .mobile-hero .hero-copy {
+          margin: 0 auto;
+          position: relative;
+        }
+        .mobile-hero .hero-copy::before {
+          content: "";
+          display: block;
+          width: 44px;
+          height: 2px;
+          margin: 0 auto 22px;
+          background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        .mobile-hero .hero-capsule {
+          color: var(--deep-gold);
+          background: rgba(198, 145, 46, 0.08);
+          border-color: rgba(198, 145, 46, 0.22);
+          margin-bottom: 18px;
+        }
+        .mobile-hero .hero-capsule .capsule-dot {
+          background: var(--gold);
+        }
+        .mobile-hero h1 {
           font-size: clamp(38px, 9.5vw, 54px);
-          margin: 14px 0 16px;
-          line-height: 1.08;
+          margin: 12px 0 18px;
+          line-height: 1.03;
+          color: var(--ink);
+          text-shadow: none;
         }
-        .hero p.lead {
+        .mobile-hero h1 .gold-italic {
+          color: var(--gold);
+        }
+        .mobile-hero p.lead {
           font-size: 15.5px;
-          margin-bottom: 24px;
+          max-width: 31ch;
+          margin: 0 auto 28px;
           line-height: 1.6;
+          color: var(--muted);
+          text-shadow: none;
         }
-        .hero-ctas {
+        .mobile-hero .hero-ctas {
           gap: 10px;
           margin-bottom: 28px;
+          justify-content: center;
         }
-        .btn-hero-primary,
-        .btn-hero-secondary {
+        .mobile-hero .btn-hero-primary,
+        .mobile-hero .btn-hero-secondary {
+          min-height: 48px;
           padding: 12px 22px;
           font-size: 13.5px;
           width: 100%;
           justify-content: center;
         }
-        .hero-checklist {
+        .mobile-hero .btn-hero-secondary {
+          color: var(--ink);
+          background: #fff;
+          border-color: var(--hairline);
+        }
+        .mobile-hero .hero-checklist {
+          width: min(100%, 310px);
+          margin: 0 auto;
           flex-direction: column;
-          align-items: flex-start;
+          align-items: center;
           gap: 10px;
           font-size: 13px;
+          color: var(--muted);
+          border-top-color: var(--hairline);
+        }
+        .mobile-hero .hero-checklist span {
+          justify-content: center;
         }
         .split .phone {
           width: 250px;
@@ -2315,11 +2368,12 @@
     </header>
 
     <!-- ══════════ HERO (Video -> A Layer -> Content) ══════════ -->
-    <section class="hero" id="top">
+    <section class="hero hero--desktop" id="top">
       <!-- 1. VIDEO (Bottom Layer) -->
       <video
         id="heroBgVideo"
         class="hero-video"
+        data-hero-video
         src="images/herobgvid.mp4"
         autoplay
         muted
@@ -2351,6 +2405,54 @@
             Discover what you love, book what you need, and get rewarded every
             time you spend — all inside one beautifully connected lifestyle
             app.
+          </p>
+          <div class="hero-ctas rv rv-d3">
+            <a href="#download" class="btn-hero-primary">Download Le Meow</a>
+            <a href="#whats-new" class="btn-hero-secondary">
+              <span>See What's New</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+          <div class="hero-checklist rv rv-d4">
+            <span><i class="check">✓</i> 1,000+ Trusted services</span>
+            <span><i class="check">✓</i> 19 Ways to pay</span>
+            <span><i class="check">✓</i> 24/7 WhatsApp support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mobile-hero" aria-labelledby="mobile-hero-heading">
+      <video
+        id="heroMobileVideo"
+        class="mobile-hero-video"
+        data-hero-video
+        src="images/herobgvid.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        x5-playsinline
+        preload="metadata"
+        disablepictureinpicture
+        disableremoteplayback
+        aria-label="Le Meow lifestyle app preview"
+      >
+        <source src="images/herobgvid.mp4" type="video/mp4" />
+      </video>
+      <div class="wrap mobile-hero-copy">
+        <div class="hero-copy">
+          <div class="hero-capsule rv">
+            <span class="capsule-dot"></span>
+            <span>Singapore · Lifestyle &amp; Rewards</span>
+          </div>
+          <h1 class="display rv rv-d1" id="mobile-hero-heading">
+            Your Life.<br /><span class="gold-italic">Personalised.</span><br />Rewarded.
+          </h1>
+          <p class="lead rv rv-d2">
+            Discover what you love, book what you need, and get rewarded every
+            time you spend — all inside one beautifully connected lifestyle app.
           </p>
           <div class="hero-ctas rv rv-d3">
             <a href="#download" class="btn-hero-primary">Download Le Meow</a>
@@ -3791,11 +3893,9 @@
         window.addEventListener("scroll", updateNav, { passive: true });
         updateNav();
 
-        /* hero video controller (Muted Continuous Autoplay & iOS Compatibility) */
-        var heroVideo = document.getElementById("heroBgVideo") || document.getElementById("heroMainVideo");
-
-        if (heroVideo) {
-          // Essential WebKit/iOS Safari autoplay policy properties (strictly muted, no voice/sound)
+        /* Hero video controller: supports the separate desktop and mobile heroes. */
+        var heroVideos = document.querySelectorAll("[data-hero-video]");
+        heroVideos.forEach(function (heroVideo) {
           heroVideo.muted = true;
           heroVideo.defaultMuted = true;
           heroVideo.volume = 0;
@@ -3804,75 +3904,40 @@
           heroVideo.setAttribute("webkit-playsinline", "");
 
           function triggerAutoPlay() {
-            if (!heroVideo) return;
+            if (!heroVideo || heroVideo.offsetParent === null) return;
             heroVideo.muted = true;
             heroVideo.defaultMuted = true;
-            var p = heroVideo.play();
-            if (p !== undefined) {
-              p.catch(function () {
-                // iOS Low Power Mode may delay autoplay until user touches screen
-              });
-            }
+            var playPromise = heroVideo.play();
+            if (playPromise !== undefined) playPromise.catch(function () {});
           }
 
-          // Trigger immediately
           triggerAutoPlay();
-
-          // iOS lifecycle event hooks
           heroVideo.addEventListener("loadedmetadata", triggerAutoPlay, { once: true });
           heroVideo.addEventListener("canplay", triggerAutoPlay, { once: true });
-          heroVideo.addEventListener("canplaythrough", triggerAutoPlay, { once: true });
           window.addEventListener("load", triggerAutoPlay, { once: true });
-
-          // iOS Loop safety (ensures continuous loop even if iOS pauses at end)
           heroVideo.addEventListener("ended", function () {
             heroVideo.currentTime = 0;
             triggerAutoPlay();
           });
 
-          // iOS Low Power Mode kickstarter: starts video on first touch/scroll anywhere
-          var iosTouchEvents = ["touchstart", "touchend", "scroll", "click"];
-          function onIosInteraction() {
-            if (heroVideo && heroVideo.paused) {
-              triggerAutoPlay();
-            }
-            iosTouchEvents.forEach(function (ev) {
-              window.removeEventListener(ev, onIosInteraction, { passive: true });
-            });
-          }
-          iosTouchEvents.forEach(function (ev) {
-            window.addEventListener(ev, onIosInteraction, { passive: true, once: true });
+          ["touchstart", "touchend", "scroll", "click"].forEach(function (eventName) {
+            window.addEventListener(eventName, triggerAutoPlay, { passive: true, once: true });
           });
-
-          // Resume on tab/app switch on iOS
           document.addEventListener("visibilitychange", function () {
-            if (!document.hidden && heroVideo && heroVideo.paused) {
-              triggerAutoPlay();
-            }
+            if (!document.hidden && heroVideo.paused) triggerAutoPlay();
           });
 
-          // Resource saver: pause video when hero is scrolled out of viewport
           if ("IntersectionObserver" in window) {
-            var heroObserver = new IntersectionObserver(
-              function (entries) {
-                entries.forEach(function (entry) {
-                  if (entry.isIntersecting) {
-                    if (heroVideo.paused) {
-                      triggerAutoPlay();
-                    }
-                  } else {
-                    if (!heroVideo.paused) {
-                      heroVideo.pause();
-                    }
-                  }
-                });
-              },
-              { threshold: 0.15 }
-            );
-            var heroSection = document.getElementById("top");
+            var heroObserver = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) triggerAutoPlay();
+                else if (!heroVideo.paused) heroVideo.pause();
+              });
+            }, { threshold: 0.15 });
+            var heroSection = heroVideo.closest("section");
             if (heroSection) heroObserver.observe(heroSection);
           }
-        }
+        });
 
         /* mobile menu */
         var burger = document.getElementById("burger"),
