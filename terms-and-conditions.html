@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms &amp; Conditions | Le Meow</title>
+    <meta
+      name="description"
+      content="Read the official Terms & Conditions governing the use of Le Meow — Singapore's lifestyle ecosystem app."
+    />
+    <meta property="og:title" content="Terms &amp; Conditions | Le Meow" />
+    <meta
+      property="og:description"
+      content="Read the official Terms & Conditions for Le Meow."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #1e160e;
+        --ivory: #ffffff;
+        --pale-gold: #e3c77f;
+        --gold: #c6912e;
+        --deep-gold: #a87418;
+        --muted: #75685a;
+        --hairline: rgba(198, 145, 46, 0.24);
+        --hairline-soft: rgba(198, 145, 46, 0.13);
+        --success: #79a91b;
+        --r-sm: 14px;
+        --r-md: 20px;
+        --r-lg: 28px;
+        --max: 1240px;
+        --ease: cubic-bezier(0.22, 0.61, 0.2, 1);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+        color: var(--ink);
+        background: #faf7f2;
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 24px;
+        width: 100%;
+      }
+      ::selection {
+        background: var(--pale-gold);
+        color: var(--ink);
+      }
+
+      /* ---------- typography ---------- */
+      .display {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
+        line-height: 1.12;
+        letter-spacing: -0.01em;
+      }
+      .script {
+        font-family: "Great Vibes", cursive;
+        font-weight: 400;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--deep-gold);
+      }
+      .eyebrow::before,
+      .eyebrow::after {
+        content: "";
+        width: 28px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold));
+      }
+      .eyebrow::after {
+        background: linear-gradient(90deg, var(--gold), transparent);
+      }
+
+      /* ---------- nav ---------- */
+      .nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(20px) saturate(190%);
+        -webkit-backdrop-filter: blur(20px) saturate(190%);
+        border-bottom: 1px solid rgba(198, 145, 46, 0.18);
+        box-shadow: 0 4px 20px rgba(20, 14, 8, 0.04);
+        transition: box-shadow 0.3s ease;
+      }
+      .nav.scrolled {
+        box-shadow: 0 8px 30px rgba(20, 14, 8, 0.08);
+      }
+      .nav-in {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 24px;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .logo {
+        font-size: 30px;
+        color: var(--gold);
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+      }
+      .logo-img {
+        height: 48px;
+        width: auto;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        font-size: 14.5px;
+        font-weight: 400;
+        color: var(--ink);
+      }
+      .nav-links a {
+        position: relative;
+        padding: 6px 0;
+        transition: color 0.25s ease;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: width 0.3s var(--ease);
+      }
+      .nav-links a:hover {
+        color: var(--gold);
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 26px;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        transition:
+          transform 0.25s var(--ease),
+          box-shadow 0.25s var(--ease),
+          background 0.25s;
+      }
+      .btn-gold {
+        background: linear-gradient(
+          135deg,
+          #d8a94e 0%,
+          var(--gold) 45%,
+          var(--deep-gold) 100%
+        );
+        color: #fff;
+        box-shadow: 0 6px 18px rgba(198, 145, 46, 0.3);
+      }
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(198, 145, 46, 0.38);
+      }
+      .btn-small {
+        padding: 9px 20px;
+        font-size: 13px;
+      }
+      .burger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px;
+      }
+      .burger span {
+        width: 22px;
+        height: 1.6px;
+        background: var(--ink);
+        transition: 0.3s;
+      }
+      .m-menu {
+        display: none;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--hairline-soft);
+        padding: 12px 24px 26px;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .m-menu.open {
+        display: flex;
+      }
+      .m-menu a {
+        padding: 12px 4px;
+        font-size: 15px;
+        border-bottom: 1px solid var(--hairline-soft);
+        color: var(--ink);
+      }
+
+      /* ---------- header banner ---------- */
+      .legal-hero {
+        position: relative;
+        padding: 54px 0 32px;
+        text-align: center;
+        background: radial-gradient(
+          circle at 50% 0%,
+          rgba(227, 199, 127, 0.18),
+          transparent 70%
+        );
+      }
+      .legal-hero .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 18px;
+        transition: color 0.2s;
+      }
+      .legal-hero .back-link:hover {
+        color: var(--gold);
+      }
+      .legal-title {
+        font-size: clamp(34px, 4.5vw, 50px);
+        margin: 12px 0 8px;
+        color: var(--ink);
+      }
+      .legal-last-updated {
+        font-size: 13.5px;
+        color: var(--muted);
+        font-weight: 400;
+        margin-top: 6px;
+      }
+
+      /* ---------- shell & card ---------- */
+      .legal-shell {
+        flex: 1 0 auto;
+        padding: 10px 24px 80px;
+        max-width: 920px;
+      }
+      .legal-card {
+        background: #ffffff;
+        border: 1px solid rgba(198, 145, 46, 0.2);
+        border-radius: var(--r-lg);
+        box-shadow: 0 16px 44px rgba(20, 14, 8, 0.04);
+        padding: clamp(24px, 5vw, 56px);
+        position: relative;
+      }
+
+      /* ---------- loading state ---------- */
+      .legal-loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        min-height: 280px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .lm-spinner {
+        width: 38px;
+        height: 38px;
+        border: 3px solid rgba(198, 145, 46, 0.2);
+        border-top-color: var(--gold);
+        border-radius: 50%;
+        animation: lmSpin 0.9s linear infinite;
+      }
+      @keyframes lmSpin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ---------- error & empty states ---------- */
+      .legal-error,
+      .legal-empty {
+        text-align: center;
+        padding: 48px 24px;
+        color: var(--muted);
+        font-size: 14.5px;
+      }
+      .legal-error p {
+        margin-bottom: 16px;
+      }
+
+      /* ---------- legal content rendered from API ---------- */
+      .legal-content {
+        color: #3d352e;
+        font-size: 15.5px;
+        line-height: 1.8;
+        letter-spacing: 0.01em;
+      }
+      .legal-content > * + * {
+        margin-top: 1rem;
+      }
+      .legal-content h1,
+      .legal-content h2,
+      .legal-content h3,
+      .legal-content h4,
+      .legal-content h5,
+      .legal-content h6 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        color: var(--ink);
+        line-height: 1.25;
+        margin-top: 2rem;
+        margin-bottom: 0.6rem;
+      }
+      .legal-content h1 {
+        font-size: 28px;
+      }
+      .legal-content h2 {
+        font-size: 24px;
+      }
+      .legal-content h3 {
+        font-size: 20px;
+      }
+      .legal-content p {
+        margin-top: 0.65rem;
+      }
+      .legal-content strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .legal-content p strong {
+        color: var(--ink);
+        letter-spacing: 0.02em;
+      }
+      .legal-content a {
+        color: var(--gold);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: color 0.2s;
+      }
+      .legal-content a:hover {
+        color: var(--deep-gold);
+      }
+      .legal-content hr {
+        border: none;
+        border-top: 1px solid var(--hairline-soft);
+        margin: 2rem 0;
+      }
+      .legal-content ul {
+        list-style: disc;
+        padding-left: 1.6rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .legal-content ol {
+        list-style: decimal;
+        padding-left: 1.6rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .legal-content li {
+        margin-top: 0.35rem;
+      }
+      .legal-content li > p {
+        margin: 0;
+        display: inline;
+      }
+      .legal-content ol[type="a"] {
+        list-style-type: lower-alpha;
+      }
+
+      /* ---------- card footer legal links ---------- */
+      .legal-card-footer {
+        margin-top: 48px;
+        padding-top: 28px;
+        border-top: 1px solid var(--hairline-soft);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .legal-card-footer a {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: color 0.2s;
+      }
+      .legal-card-footer a:hover,
+      .legal-card-footer a.active {
+        color: var(--gold);
+      }
+      .legal-card-footer span {
+        opacity: 0.5;
+      }
+
+      /* ---------- page footer ---------- */
+      footer {
+        padding: 48px 0 36px;
+        margin-top: auto;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--hairline-soft);
+        padding-top: 36px;
+      }
+      .foot .logo {
+        font-size: 26px;
+      }
+      .foot nav {
+        display: flex;
+        gap: 24px;
+        font-size: 13px;
+        color: var(--muted);
+        flex-wrap: wrap;
+      }
+      .foot nav a:hover {
+        color: var(--deep-gold);
+      }
+      .foot small {
+        font-size: 12.5px;
+        color: var(--muted);
+        width: 100%;
+        text-align: center;
+        margin-top: 24px;
+        font-weight: 300;
+      }
+
+      /* ---------- responsive adjustments ---------- */
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+        }
+        .logo-img {
+          height: 42px;
+        }
+        .burger {
+          display: flex;
+        }
+      }
+      @media (max-width: 600px) {
+        .nav-in {
+          height: 64px;
+          padding: 0 16px;
+        }
+        .m-menu {
+          top: 64px;
+        }
+        .legal-hero {
+          padding: 36px 0 24px;
+        }
+        .legal-shell {
+          padding: 0 16px 60px;
+        }
+        .legal-card {
+          padding: 24px 18px;
+          border-radius: var(--r-md);
+        }
+        .foot {
+          flex-direction: column;
+          text-align: center;
+        }
+        .foot nav {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══════════ NAV ══════════ -->
+    <header class="nav" id="nav">
+      <div class="nav-in">
+        <a href="index.html" class="logo script" aria-label="Le Meow home">
+          <img src="images/logo.png" alt="Le Meow" class="logo-img" />
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html#discover">Discover</a>
+          <a href="index.html#highlights">Highlights</a>
+          <a href="index.html#membership">Membership</a>
+          <a href="index.html#rewards">Rewards</a>
+          <a href="index.html#wallet">Wallet</a>
+          <a href="index.html#gift">Gift</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <a href="index.html#download" class="btn btn-gold">Get Le Meow</a>
+          <button
+            class="burger"
+            id="burger"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="m-menu" id="mmenu" aria-label="Mobile">
+        <a href="index.html#discover">Discover</a>
+        <a href="index.html#highlights">Highlights</a>
+        <a href="index.html#membership">Membership</a>
+        <a href="index.html#rewards">Rewards</a>
+        <a href="index.html#wallet">Wallet</a>
+        <a href="index.html#gift">Gift</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- ══════════ HERO BANNER ══════════ -->
+    <section class="legal-hero">
+      <div class="wrap">
+        <div>
+          <a href="index.html" class="back-link">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Home
+          </a>
+        </div>
+        <span class="eyebrow">Legal &amp; Compliance</span>
+        <h1 id="legalTitle" class="display legal-title">Terms &amp; Conditions</h1>
+        <p id="legalLastUpdated" class="legal-last-updated" style="display: none;"></p>
+      </div>
+    </section>
+
+    <!-- ══════════ CONTENT SHELL ══════════ -->
+    <main class="legal-shell wrap">
+      <div class="legal-card">
+        <!-- Loading State -->
+        <div id="legalLoading" class="legal-loading">
+          <div class="lm-spinner"></div>
+          <span>Loading terms &amp; conditions...</span>
+        </div>
+
+        <!-- Error State -->
+        <div id="legalError" class="legal-error" style="display: none;">
+          <p>Unable to load terms &amp; conditions right now.</p>
+          <button type="button" class="btn btn-gold btn-small" id="retryBtn">
+            Retry
+          </button>
+        </div>
+
+        <!-- Empty State -->
+        <div id="legalEmpty" class="legal-empty" style="display: none;">
+          Terms &amp; Conditions content not configured.
+        </div>
+
+        <!-- Dynamic Content Body -->
+        <div id="legalContent" class="legal-content" style="display: none;"></div>
+
+        <!-- Inner Card Footer -->
+        <div class="legal-card-footer">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span aria-hidden="true">·</span>
+          <a href="terms-and-conditions.html" class="active">Terms &amp; Conditions</a>
+          <span aria-hidden="true">·</span>
+          <a href="index.html#contact">Contact Us</a>
+          <span aria-hidden="true">·</span>
+          <a href="index.html">Home</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer>
+      <div class="wrap">
+        <div class="foot">
+          <span class="logo script">
+            <img
+              src="images/logo.png"
+              alt="Le Meow"
+              style="height: 64px; width: auto"
+            />
+          </span>
+          <nav aria-label="Footer">
+            <a href="index.html#discover">Discover</a>
+            <a href="index.html#membership">Membership</a>
+            <a href="index.html#wallet">Wallet</a>
+            <a href="index.html#gift">Gift Vouchers</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#download">Download</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+          </nav>
+          <small>© 2026 Le Meow · Part of the Meow ecosystem · Singapore</small>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ══════════ SCRIPT ══════════ -->
+    <script>
+      (function () {
+        const BASE_URL = "https://meow-service-test.flutterclone.com";
+        const ENDPOINT = BASE_URL + "/api/admin/pages/slug/terms-and-conditions";
+
+        const loadingEl = document.getElementById("legalLoading");
+        const errorEl = document.getElementById("legalError");
+        const emptyEl = document.getElementById("legalEmpty");
+        const contentEl = document.getElementById("legalContent");
+        const titleEl = document.getElementById("legalTitle");
+        const updatedEl = document.getElementById("legalLastUpdated");
+        const retryBtn = document.getElementById("retryBtn");
+
+        async function fetchTermsAndConditions() {
+          loadingEl.style.display = "flex";
+          errorEl.style.display = "none";
+          emptyEl.style.display = "none";
+          contentEl.style.display = "none";
+
+          try {
+            const res = await fetch(ENDPOINT, {
+              headers: {
+                Accept: "application/json",
+                "X-Platform": "web",
+                "X-App-Version": "1.0.0",
+              },
+            });
+
+            if (!res.ok) {
+              throw new Error("HTTP error " + res.status);
+            }
+
+            const json = await res.json();
+            const page = json && json.data ? json.data : null;
+
+            if (!page || !page.description || !page.description.trim()) {
+              loadingEl.style.display = "none";
+              emptyEl.style.display = "block";
+              return;
+            }
+
+            if (page.title) {
+              titleEl.textContent = page.title;
+              document.title = page.title + " | Le Meow";
+            }
+
+            if (page.updated_at) {
+              const date = new Date(page.updated_at);
+              if (!isNaN(date.getTime())) {
+                const formattedDate = date.toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                });
+                updatedEl.textContent = "Last updated: " + formattedDate;
+                updatedEl.style.display = "inline-block";
+              }
+            }
+
+            contentEl.innerHTML = page.description.trim();
+            loadingEl.style.display = "none";
+            contentEl.style.display = "block";
+          } catch (err) {
+            console.error("Failed to load terms & conditions:", err);
+            loadingEl.style.display = "none";
+            errorEl.style.display = "block";
+          }
+        }
+
+        if (retryBtn) {
+          retryBtn.addEventListener("click", fetchTermsAndConditions);
+        }
+
+        // Nav scroll listener
+        const nav = document.getElementById("nav");
+        function updateNav() {
+          if (!nav) return;
+          if (window.scrollY > 20) {
+            nav.classList.add("scrolled");
+          } else {
+            nav.classList.remove("scrolled");
+          }
+        }
+        window.addEventListener("scroll", updateNav, { passive: true });
+        updateNav();
+
+        // Mobile burger menu
+        const burger = document.getElementById("burger");
+        const mmenu = document.getElementById("mmenu");
+        if (burger && mmenu) {
+          burger.addEventListener("click", function () {
+            const open = mmenu.classList.toggle("open");
+            burger.setAttribute("aria-expanded", open);
+          });
+          mmenu.querySelectorAll("a").forEach(function (a) {
+            a.addEventListener("click", function () {
+              mmenu.classList.remove("open");
+              burger.setAttribute("aria-expanded", "false");
+            });
+          });
+        }
+
+        // Fetch on load
+        fetchTermsAndConditions();
+      })();
+    </script>
+  </body>
+</html>
