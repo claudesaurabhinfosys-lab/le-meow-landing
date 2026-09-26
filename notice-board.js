@@ -315,8 +315,8 @@
     return String(value);
   }
 
-  function isDismissible(value) {
-    return value === true || value === 1 || value === "1" || value === "true";
+  function isDismissible() {
+    return true;
   }
 
   function readDismissed() {
@@ -376,20 +376,15 @@
     panel.removeAttribute("aria-labelledby");
     panel.removeAttribute("aria-describedby");
     panel.setAttribute("tabindex", "-1");
-    const dismissible = isDismissible(currentNotice.is_dismissible);
     if (currentNotice.type === "image_only") {
       renderImageNotice(currentNotice);
     } else {
       renderFullNotice(currentNotice);
     }
-    if (dismissible) {
-      panel.classList.add("has-close");
-      const button = createCloseButton();
-      panel.appendChild(button);
-      button.focus();
-    } else {
-      panel.focus();
-    }
+    panel.classList.add("has-close");
+    const button = createCloseButton();
+    panel.appendChild(button);
+    button.focus();
   }
 
   function renderFullNotice(notice) {
@@ -505,7 +500,7 @@
   }
 
   function dismissCurrent() {
-    if (!currentNotice || !isDismissible(currentNotice.is_dismissible)) {
+    if (!currentNotice) {
       return;
     }
     recordDismissed(currentNotice.id);
@@ -539,11 +534,7 @@
 
   function handleKeydown(event) {
     if (!panel) return;
-    if (
-      event.key === "Escape" &&
-      currentNotice &&
-      isDismissible(currentNotice.is_dismissible)
-    ) {
+    if (event.key === "Escape" && currentNotice) {
       event.preventDefault();
       dismissCurrent();
       return;
