@@ -388,15 +388,17 @@
         z-index: 1;
         pointer-events: none;
         background:
-          linear-gradient(180deg,
+          linear-gradient(
+            180deg,
             rgba(8, 6, 4, 0.45) 0%,
-            rgba(8, 6, 4, 0.20) 25%,
-            rgba(8, 6, 4, 0.20) 70%,
-            rgba(8, 6, 4, 0.60) 100%
+            rgba(8, 6, 4, 0.2) 25%,
+            rgba(8, 6, 4, 0.2) 70%,
+            rgba(8, 6, 4, 0.6) 100%
           ),
-          linear-gradient(90deg,
+          linear-gradient(
+            90deg,
             rgba(8, 6, 4, 0.82) 0%,
-            rgba(8, 6, 4, 0.70) 45%,
+            rgba(8, 6, 4, 0.7) 45%,
             rgba(8, 6, 4, 0.38) 75%,
             rgba(8, 6, 4, 0.22) 100%
           );
@@ -451,7 +453,7 @@
       }
       .hero p.lead {
         font-size: 17.5px;
-        color: rgba(255, 255, 255, 0.90);
+        color: rgba(255, 255, 255, 0.9);
         font-weight: 300;
         line-height: 1.65;
         max-width: 530px;
@@ -474,7 +476,9 @@
         font-size: 15px;
         letter-spacing: 0.02em;
         box-shadow: 0 8px 24px rgba(196, 148, 63, 0.35);
-        transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+        transition:
+          transform 0.25s var(--ease),
+          box-shadow 0.25s var(--ease);
         display: inline-flex;
         align-items: center;
         gap: 8px;
@@ -533,8 +537,6 @@
       .mobile-hero {
         display: none;
       }
-
-
 
       /* image fallback */
       .ph-fall {
@@ -1097,7 +1099,7 @@
         background: linear-gradient(180deg, #1c1813 0%, #151310 100%);
         border-left: 1px solid rgba(198, 145, 46, 0.35);
       }
-      
+
       /* Tier Badges in Header */
       .b-comp-badge {
         display: inline-flex;
@@ -1173,7 +1175,9 @@
         background: rgba(198, 145, 46, 0.08);
         border: 1px solid var(--hairline-soft);
         color: var(--deep-gold);
-        transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+        transition:
+          transform 0.25s var(--ease),
+          background 0.25s var(--ease);
       }
       .b-comp-table tbody tr:hover .privilege-icon {
         transform: scale(1.08);
@@ -2004,7 +2008,11 @@
         .mobile-hero {
           display: block;
           background:
-            radial-gradient(circle at 50% 0%, rgba(229, 197, 123, 0.22), transparent 38%),
+            radial-gradient(
+              circle at 50% 0%,
+              rgba(229, 197, 123, 0.22),
+              transparent 38%
+            ),
             #fffdf9;
         }
         .mobile-hero-video {
@@ -2032,7 +2040,12 @@
           width: 44px;
           height: 2px;
           margin: 0 auto 22px;
-          background: linear-gradient(90deg, transparent, var(--gold), transparent);
+          background: linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            transparent
+          );
         }
         .mobile-hero .hero-capsule {
           color: var(--deep-gold);
@@ -2216,7 +2229,9 @@
         font-family: inherit;
         font-size: 15px;
         color: var(--ink);
-        transition: border-color 0.25s, box-shadow 0.25s;
+        transition:
+          border-color 0.25s,
+          box-shadow 0.25s;
         outline: none;
         box-sizing: border-box;
       }
@@ -2312,16 +2327,23 @@
         margin-right: 8px;
       }
       @keyframes lmSpin {
-        to { transform: rotate(360deg); }
+        to {
+          transform: rotate(360deg);
+        }
       }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WNKWHLFBDP"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-WNKWHLFBDP"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WNKWHLFBDP');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WNKWHLFBDP");
     </script>
   </head>
   <body>
@@ -2374,7 +2396,7 @@
         id="heroBgVideo"
         class="hero-video"
         data-hero-video
-        src="images/herobgvid.mp4"
+        src="images/herobgvid-upscaled.mp4"
         autoplay
         muted
         loop
@@ -2385,7 +2407,7 @@
         disablepictureinpicture
         disableremoteplayback
       >
-        <source src="images/herobgvid.mp4" type="video/mp4" />
+        <source src="images/herobgvid-upscaled.mp4" type="video/mp4" />
       </video>
 
       <!-- 2. A LAYER (Middle Dark Tint Layer - No White Fade) -->
@@ -2399,18 +2421,30 @@
             <span>Singapore · Lifestyle &amp; Rewards</span>
           </div>
           <h1 class="display rv rv-d1">
-            Your Life.<br /><span class="gold-italic">Personalised.</span><br />Rewarded.
+            Your Life.<br /><span class="gold-italic">Personalised.</span
+            ><br />Rewarded.
           </h1>
           <p class="lead rv rv-d2">
             Discover what you love, book what you need, and get rewarded every
-            time you spend — all inside one beautifully connected lifestyle
-            app.
+            time you spend — all inside one beautifully connected lifestyle app.
           </p>
           <div class="hero-ctas rv rv-d3">
             <a href="#download" class="btn-hero-primary">Download Le Meow</a>
             <a href="#whats-new" class="btn-hero-secondary">
               <span>See What's New</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </a>
           </div>
           <div class="hero-checklist rv rv-d4">
@@ -2448,7 +2482,8 @@
             <span>Singapore · Lifestyle &amp; Rewards</span>
           </div>
           <h1 class="display rv rv-d1" id="mobile-hero-heading">
-            Your Life.<br /><span class="gold-italic">Personalised.</span><br />Rewarded.
+            Your Life.<br /><span class="gold-italic">Personalised.</span
+            ><br />Rewarded.
           </h1>
           <p class="lead rv rv-d2">
             Discover what you love, book what you need, and get rewarded every
@@ -2458,7 +2493,19 @@
             <a href="#download" class="btn-hero-primary">Download Le Meow</a>
             <a href="#whats-new" class="btn-hero-secondary">
               <span>See What's New</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </a>
           </div>
           <div class="hero-checklist rv rv-d4">
@@ -2787,31 +2834,70 @@
         <div class="b-comp-wrapper rv">
           <div class="b-comp-head rv">
             <span class="eyebrow center">Tier Comparison</span>
-            <h3 class="display">Benefits <span class="gold-i">Comparison</span></h3>
+            <h3 class="display">
+              Benefits <span class="gold-i">Comparison</span>
+            </h3>
             <p>Privileges and rewards breakdown for each membership tier.</p>
           </div>
 
           <div class="b-comp-card">
             <div class="b-comp-scroll">
-              <table class="b-comp-table" aria-label="Benefits Comparison Table">
+              <table
+                class="b-comp-table"
+                aria-label="Benefits Comparison Table"
+              >
                 <thead>
                   <tr>
                     <th scope="col" class="col-privilege">Privileges</th>
                     <th scope="col" class="col-tier col-silver">
                       <span class="b-comp-badge badge-silver">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 2L2 12l10 10 10-10L12 2z"/></svg>
+                        <svg
+                          width="13"
+                          height="13"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.2"
+                          aria-hidden="true"
+                        >
+                          <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                        </svg>
                         Silver
                       </span>
                     </th>
                     <th scope="col" class="col-tier col-gold">
                       <span class="b-comp-badge badge-gold">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 17l1.5-9L9 12l3-7 3 7 4.5-4L21 17z"/><path d="M4 20h16"/></svg>
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          aria-hidden="true"
+                        >
+                          <path d="M3 17l1.5-9L9 12l3-7 3 7 4.5-4L21 17z" />
+                          <path d="M4 20h16" />
+                        </svg>
                         Gold
                       </span>
                     </th>
                     <th scope="col" class="col-tier col-black">
                       <span class="b-comp-badge badge-black">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/><path d="M19 15l.9 3.1L23 19l-3.1.9L19 23l-.9-3.1L15 19l3.1-.9L19 15z"/></svg>
+                        <svg
+                          width="13"
+                          height="13"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"
+                          />
+                          <path
+                            d="M19 15l.9 3.1L23 19l-3.1.9L19 23l-.9-3.1L15 19l3.1-.9L19 15z"
+                          />
+                        </svg>
                         Black
                       </span>
                     </th>
@@ -2823,14 +2909,33 @@
                     <td class="cell-privilege">
                       <div class="privilege-item">
                         <span class="privilege-icon">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2V3.4h10l7.2 7.2a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2V3.4h10l7.2 7.2a2 2 0 0 1 0 2.8z"
+                            />
+                            <circle cx="7.5" cy="7.5" r="1.2" />
+                          </svg>
                         </span>
                         <span class="privilege-name">Member-only deals</span>
                       </div>
                     </td>
-                    <td class="cell-tier cell-silver">Access to member-only deals &amp; exclusive offers</td>
-                    <td class="cell-tier cell-gold">Access to member-only deals &amp; exclusive offers</td>
-                    <td class="cell-tier cell-black">Access to member-only deals &amp; exclusive offers</td>
+                    <td class="cell-tier cell-silver">
+                      Access to member-only deals &amp; exclusive offers
+                    </td>
+                    <td class="cell-tier cell-gold">
+                      Access to member-only deals &amp; exclusive offers
+                    </td>
+                    <td class="cell-tier cell-black">
+                      Access to member-only deals &amp; exclusive offers
+                    </td>
                   </tr>
 
                   <!-- Row 2: Extra discounts -->
@@ -2838,7 +2943,18 @@
                     <td class="cell-privilege">
                       <div class="privilege-item">
                         <span class="privilege-icon">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m9 15 6-6M9 9h.01M15 15h.01"/></svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            aria-hidden="true"
+                          >
+                            <rect x="3" y="3" width="18" height="18" rx="4" />
+                            <path d="m9 15 6-6M9 9h.01M15 15h.01" />
+                          </svg>
                         </span>
                         <span class="privilege-name">Extra discounts</span>
                       </div>
@@ -2853,14 +2969,37 @@
                     <td class="cell-privilege">
                       <div class="privilege-item">
                         <span class="privilege-icon">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                            />
+                            <path
+                              d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                            />
+                          </svg>
                         </span>
                         <span class="privilege-name">Points earning</span>
                       </div>
                     </td>
                     <td class="cell-tier cell-silver">$15 referral bonus</td>
-                    <td class="cell-tier cell-gold"><span class="b-comp-dash" aria-label="Not included">—</span></td>
-                    <td class="cell-tier cell-black"><span class="b-comp-dash" aria-label="Not included">—</span></td>
+                    <td class="cell-tier cell-gold">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
+                    <td class="cell-tier cell-black">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
                   </tr>
 
                   <!-- Row 4: Birthday reward -->
@@ -2868,7 +3007,19 @@
                     <td class="cell-privilege">
                       <div class="privilege-item">
                         <span class="privilege-icon">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 21h16M5 21v-8h14v8M12 5v3M9 3v2M15 3v2M5 13c0-2 2-5 7-5s7 3 7 5"/></svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M4 21h16M5 21v-8h14v8M12 5v3M9 3v2M15 3v2M5 13c0-2 2-5 7-5s7 3 7 5"
+                            />
+                          </svg>
                         </span>
                         <span class="privilege-name">Birthday reward</span>
                       </div>
@@ -2883,14 +3034,33 @@
                     <td class="cell-privilege">
                       <div class="privilege-item">
                         <span class="privilege-icon">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            aria-hidden="true"
+                          >
+                            <rect x="3" y="4" width="18" height="18" rx="2" />
+                            <path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4" />
+                          </svg>
                         </span>
                         <span class="privilege-name">Priority booking</span>
                       </div>
                     </td>
-                    <td class="cell-tier cell-silver"><span class="b-comp-dash" aria-label="Not included">—</span></td>
-                    <td class="cell-tier cell-gold">Priority &amp; same-day booking (cutoff 16:00 SGT)</td>
-                    <td class="cell-tier cell-black">Top priority &amp; same-day booking (cutoff 12:00 SGT)</td>
+                    <td class="cell-tier cell-silver">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
+                    <td class="cell-tier cell-gold">
+                      Priority &amp; same-day booking (cutoff 16:00 SGT)
+                    </td>
+                    <td class="cell-tier cell-black">
+                      Top priority &amp; same-day booking (cutoff 12:00 SGT)
+                    </td>
                   </tr>
 
                   <!-- Row 6: Cancellation flexibility -->
@@ -2898,14 +3068,35 @@
                     <td class="cell-privilege">
                       <div class="privilege-item">
                         <span class="privilege-icon">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            aria-hidden="true"
+                          >
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3 3" />
+                          </svg>
                         </span>
-                        <span class="privilege-name">Cancellation flexibility</span>
+                        <span class="privilege-name"
+                          >Cancellation flexibility</span
+                        >
                       </div>
                     </td>
                     <td class="cell-tier cell-silver">24 Hours Free</td>
-                    <td class="cell-tier cell-gold"><span class="b-comp-dash" aria-label="Not included">—</span></td>
-                    <td class="cell-tier cell-black"><span class="b-comp-dash" aria-label="Not included">—</span></td>
+                    <td class="cell-tier cell-gold">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
+                    <td class="cell-tier cell-black">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
                   </tr>
 
                   <!-- Row 7: Early access -->
@@ -2913,14 +3104,32 @@
                     <td class="cell-privilege">
                       <div class="privilege-item">
                         <span class="privilege-icon">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            aria-hidden="true"
+                          >
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                          </svg>
                         </span>
                         <span class="privilege-name">Early access</span>
                       </div>
                     </td>
-                    <td class="cell-tier cell-silver"><span class="b-comp-dash" aria-label="Not included">—</span></td>
-                    <td class="cell-tier cell-gold">Early access to new launches &amp; limited offers</td>
-                    <td class="cell-tier cell-black">Early access to new launches &amp; limited offers</td>
+                    <td class="cell-tier cell-silver">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
+                    <td class="cell-tier cell-gold">
+                      Early access to new launches &amp; limited offers
+                    </td>
+                    <td class="cell-tier cell-black">
+                      Early access to new launches &amp; limited offers
+                    </td>
                   </tr>
 
                   <!-- Row 8: Exclusive promotions -->
@@ -2928,14 +3137,40 @@
                     <td class="cell-privilege">
                       <div class="privilege-item">
                         <span class="privilege-icon">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+                            />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                          </svg>
                         </span>
                         <span class="privilege-name">Exclusive promotions</span>
                       </div>
                     </td>
-                    <td class="cell-tier cell-silver"><span class="b-comp-dash" aria-label="Not included">—</span></td>
-                    <td class="cell-tier cell-gold"><span class="b-comp-dash" aria-label="Not included">—</span></td>
-                    <td class="cell-tier cell-black"><span class="b-comp-dash" aria-label="Not included">—</span></td>
+                    <td class="cell-tier cell-silver">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
+                    <td class="cell-tier cell-gold">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
+                    <td class="cell-tier cell-black">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
                   </tr>
 
                   <!-- Row 9: Concierge chat -->
@@ -2943,14 +3178,34 @@
                     <td class="cell-privilege">
                       <div class="privilege-item">
                         <span class="privilege-icon">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                            />
+                          </svg>
                         </span>
                         <span class="privilege-name">Concierge chat</span>
                       </div>
                     </td>
-                    <td class="cell-tier cell-silver"><span class="b-comp-dash" aria-label="Not included">—</span></td>
-                    <td class="cell-tier cell-gold">VIP priority concierge chat 24/7</td>
-                    <td class="cell-tier cell-black">VIP priority concierge chat 24/7</td>
+                    <td class="cell-tier cell-silver">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
+                    <td class="cell-tier cell-gold">
+                      VIP priority concierge chat 24/7
+                    </td>
+                    <td class="cell-tier cell-black">
+                      VIP priority concierge chat 24/7
+                    </td>
                   </tr>
 
                   <!-- Row 10: Customer support -->
@@ -2958,7 +3213,20 @@
                     <td class="cell-privilege">
                       <div class="privilege-item">
                         <span class="privilege-icon">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            aria-hidden="true"
+                          >
+                            <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                            <path
+                              d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+                            />
+                          </svg>
                         </span>
                         <span class="privilege-name">Customer support</span>
                       </div>
@@ -2973,14 +3241,38 @@
                     <td class="cell-privilege">
                       <div class="privilege-item">
                         <span class="privilege-icon">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 11l2 2 4-4"/></svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+                            />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M19 11l2 2 4-4" />
+                          </svg>
                         </span>
                         <span class="privilege-name">Staff selection</span>
                       </div>
                     </td>
-                    <td class="cell-tier cell-silver"><span class="b-comp-dash" aria-label="Not included">—</span></td>
-                    <td class="cell-tier cell-gold"><span class="b-comp-dash" aria-label="Not included">—</span></td>
-                    <td class="cell-tier cell-black">Preferred staff selection</td>
+                    <td class="cell-tier cell-silver">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
+                    <td class="cell-tier cell-gold">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
+                    <td class="cell-tier cell-black">
+                      Preferred staff selection
+                    </td>
                   </tr>
 
                   <!-- Row 12: Special experiences -->
@@ -2988,14 +3280,38 @@
                     <td class="cell-privilege">
                       <div class="privilege-item">
                         <span class="privilege-icon">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"
+                            />
+                          </svg>
                         </span>
                         <span class="privilege-name">Special experiences</span>
                       </div>
                     </td>
-                    <td class="cell-tier cell-silver"><span class="b-comp-dash" aria-label="Not included">—</span></td>
-                    <td class="cell-tier cell-gold"><span class="b-comp-dash" aria-label="Not included">—</span></td>
-                    <td class="cell-tier cell-black"><span class="b-comp-dash" aria-label="Not included">—</span></td>
+                    <td class="cell-tier cell-silver">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
+                    <td class="cell-tier cell-gold">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
+                    <td class="cell-tier cell-black">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
                   </tr>
 
                   <!-- Row 13: Black-only surprises -->
@@ -3003,21 +3319,53 @@
                     <td class="cell-privilege">
                       <div class="privilege-item">
                         <span class="privilege-icon">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 7v14M12 7c-2-4-7-4-7-1s5 1 7 1zm0 0c2-4 7-4 7-1s-5 1-7 1z"/></svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M20 12v9H4v-9M2 7h20v5H2zM12 7v14M12 7c-2-4-7-4-7-1s5 1 7 1zm0 0c2-4 7-4 7-1s-5 1-7 1z"
+                            />
+                          </svg>
                         </span>
                         <span class="privilege-name">Black-only surprises</span>
                       </div>
                     </td>
-                    <td class="cell-tier cell-silver"><span class="b-comp-dash" aria-label="Not included">—</span></td>
-                    <td class="cell-tier cell-gold"><span class="b-comp-dash" aria-label="Not included">—</span></td>
-                    <td class="cell-tier cell-black">Complimentary gifts &amp; surprises</td>
+                    <td class="cell-tier cell-silver">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
+                    <td class="cell-tier cell-gold">
+                      <span class="b-comp-dash" aria-label="Not included"
+                        >—</span
+                      >
+                    </td>
+                    <td class="cell-tier cell-black">
+                      Complimentary gifts &amp; surprises
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div class="b-comp-hint">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7M12 19l-7-7 7-7"/></svg>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7M12 19l-7-7 7-7" />
+            </svg>
             Swipe horizontally to compare tiers
           </div>
         </div>
@@ -3751,9 +4099,13 @@
       <div class="wrap">
         <div class="sec-head rv">
           <span class="eyebrow center">Get in Touch</span>
-          <h2 class="display">Concierge &amp; <span class="gold-i">Enquiries</span></h2>
+          <h2 class="display">
+            Concierge &amp; <span class="gold-i">Enquiries</span>
+          </h2>
           <p>
-            Have questions regarding Le Meow, partnership opportunities, or corporate lifestyle memberships? Send us an enquiry below and our concierge team will assist you.
+            Have questions regarding Le Meow, partnership opportunities, or
+            corporate lifestyle memberships? Send us an enquiry below and our
+            concierge team will assist you.
           </p>
         </div>
         <div class="contact-card rv" id="leMeowContactContainer">
@@ -3914,28 +4266,40 @@
           }
 
           triggerAutoPlay();
-          heroVideo.addEventListener("loadedmetadata", triggerAutoPlay, { once: true });
-          heroVideo.addEventListener("canplay", triggerAutoPlay, { once: true });
+          heroVideo.addEventListener("loadedmetadata", triggerAutoPlay, {
+            once: true,
+          });
+          heroVideo.addEventListener("canplay", triggerAutoPlay, {
+            once: true,
+          });
           window.addEventListener("load", triggerAutoPlay, { once: true });
           heroVideo.addEventListener("ended", function () {
             heroVideo.currentTime = 0;
             triggerAutoPlay();
           });
 
-          ["touchstart", "touchend", "scroll", "click"].forEach(function (eventName) {
-            window.addEventListener(eventName, triggerAutoPlay, { passive: true, once: true });
-          });
+          ["touchstart", "touchend", "scroll", "click"].forEach(
+            function (eventName) {
+              window.addEventListener(eventName, triggerAutoPlay, {
+                passive: true,
+                once: true,
+              });
+            },
+          );
           document.addEventListener("visibilitychange", function () {
             if (!document.hidden && heroVideo.paused) triggerAutoPlay();
           });
 
           if ("IntersectionObserver" in window) {
-            var heroObserver = new IntersectionObserver(function (entries) {
-              entries.forEach(function (entry) {
-                if (entry.isIntersecting) triggerAutoPlay();
-                else if (!heroVideo.paused) heroVideo.pause();
-              });
-            }, { threshold: 0.15 });
+            var heroObserver = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (entry) {
+                  if (entry.isIntersecting) triggerAutoPlay();
+                  else if (!heroVideo.paused) heroVideo.pause();
+                });
+              },
+              { threshold: 0.15 },
+            );
             var heroSection = heroVideo.closest("section");
             if (heroSection) heroObserver.observe(heroSection);
           }
@@ -4142,7 +4506,8 @@
           has_concierge_chat: false,
           has_black_only_surprises: false,
           allow_staff_selection: false,
-          badge_image_url: "https://meow-service-test.flutterclone.com/storage/images/membership_tiers/6a7b2a9805391_1786456728.png"
+          badge_image_url:
+            "https://meow-service-test.flutterclone.com/storage/images/membership_tiers/6a7b2a9805391_1786456728.png",
         },
         {
           id: 2,
@@ -4164,7 +4529,7 @@
           has_concierge_chat: false,
           has_black_only_surprises: false,
           allow_staff_selection: false,
-          badge_image_url: null
+          badge_image_url: null,
         },
         {
           id: 3,
@@ -4187,7 +4552,7 @@
           has_concierge_chat: true,
           has_black_only_surprises: false,
           allow_staff_selection: false,
-          badge_image_url: null
+          badge_image_url: null,
         },
         {
           id: 4,
@@ -4210,8 +4575,8 @@
           has_concierge_chat: true,
           has_black_only_surprises: true,
           allow_staff_selection: true,
-          badge_image_url: null
-        }
+          badge_image_url: null,
+        },
       ];
 
       async function fetchMembershipTiers() {
@@ -4221,7 +4586,9 @@
           const res = await fetch(url);
           if (!res.ok) throw new Error("Failed to fetch membership tiers");
           const json = await res.json();
-          return json && json?.data?.tiers && json.data.tiers.length ? json.data.tiers : fallbackTiers;
+          return json && json?.data?.tiers && json.data.tiers.length
+            ? json.data.tiers
+            : fallbackTiers;
         } catch (err) {
           console.log("MEMBERSHIP TIERS FETCH ERROR (using fallback):", err);
           return fallbackTiers;
