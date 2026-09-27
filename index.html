@@ -4417,7 +4417,7 @@
     <script>
       <!--  -->
       async function fetchHighlightsVideos(page) {
-        const url = `https://meow-service-test.flutterclone.com/api/public/featured-highlights/list?per_page=5&page=1&order_by=created_at&order=desc&is_active=1`;
+        const url = `https://lemeowapis.meowadvancedintelligence.com/api/public/featured-highlights/list?per_page=5&page=1&order_by=created_at&order=desc&is_active=1`;
         try {
           const res = await fetch(url, {
             headers: {
@@ -4507,7 +4507,7 @@
           has_black_only_surprises: false,
           allow_staff_selection: false,
           badge_image_url:
-            "https://meow-service-test.flutterclone.com/storage/images/membership_tiers/6a7b2a9805391_1786456728.png",
+            "https://lemeowapis.meowadvancedintelligence.com/storage/images/membership_tiers/6a7b2a9805391_1786456728.png",
         },
         {
           id: 2,
@@ -4581,7 +4581,7 @@
 
       async function fetchMembershipTiers() {
         const url =
-          "https://meow-service-test.flutterclone.com/api/user/membership-tiers";
+          "https://lemeowapis.meowadvancedintelligence.com/api/user/membership-tiers";
         try {
           const res = await fetch(url);
           if (!res.ok) throw new Error("Failed to fetch membership tiers");

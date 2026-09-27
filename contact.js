@@ -1,7 +1,7 @@
 (() => {
   const SITE_SLUG = "le-meow-1788966188";
   const API_KEY = "site_9ab595eb4bb5d2266b875ef8f22c1f366b63486baaaa253e";
-  const BASE_URL = "https://meow-service-test.flutterclone.com";
+  const BASE_URL = "https://lemeowapis.meowadvancedintelligence.com";
 
   const container = document.getElementById("leMeowContactContainer");
   if (!container) return;
