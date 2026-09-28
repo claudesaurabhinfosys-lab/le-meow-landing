@@ -2,11 +2,9 @@
     RewriteEngine On
 
     # Apple requires this endpoint without a file extension.
-    RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^\.well-known/apple-app-site-association$ .well-known/apple-app-site-association.json [L]
 
     # Optional extensionless alias for the Android association file.
-    RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^\.well-known/assetlinks$ .well-known/assetlinks.json [L]
 </IfModule>
 
