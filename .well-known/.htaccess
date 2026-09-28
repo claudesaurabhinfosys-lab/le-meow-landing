@@ -1,4 +1,1 @@
-<Files "apple-app-site-association">
-    ForceType application/json
-    Header set Content-Type "application/json"
-</Files>
+AddType application/json .json apple-app-site-association
