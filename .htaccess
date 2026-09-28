@@ -1,19 +1,12 @@
+# Serve apple-app-site-association without .json extension
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^\.well-known/apple-app-site-association$ .well-known/apple-app-site-association.json [L,T=application/json]
+</IfModule>
+
+# Set correct Content-Type for deep-link files
 <IfModule mod_headers.c>
-    <Files "apple-app-site-association">
+    <FilesMatch "^(apple-app-site-association(?:\.json)?|assetlinks\.json)$">
         Header set Content-Type "application/json"
-    </Files>
+    </FilesMatch>
 </IfModule>
-
-# Allow access to .well-known directory (Apache blocks dot-dirs by default)
-<IfModule mod_authz_core.c>
-    <Directory ".well-known">
-        Require all granted
-    </Directory>
-</IfModule>
-
-# Set correct Content-Type for both deep-link files
-<FilesMatch "^(apple-app-site-association(\.json)?|assetlinks\.json)$">
-    <IfModule mod_headers.c>
-        Header set Content-Type "application/json"
-    </IfModule>
-</FilesMatch>
