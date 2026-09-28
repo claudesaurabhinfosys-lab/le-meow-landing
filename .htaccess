@@ -1,15 +1,5 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    # Apple requires this endpoint without a file extension.
-    RewriteRule ^\.well-known/apple-app-site-association$ .well-known/apple-app-site-association.json [L]
-
-    # Optional extensionless alias for the Android association file.
-    RewriteRule ^\.well-known/assetlinks$ .well-known/assetlinks.json [L]
-</IfModule>
-
 <IfModule mod_headers.c>
-    <FilesMatch "^(apple-app-site-association(?:\.json)?|assetlinks(?:\.json)?)$">
+    <Files "apple-app-site-association">
         Header set Content-Type "application/json"
-    </FilesMatch>
+    </Files>
 </IfModule>
