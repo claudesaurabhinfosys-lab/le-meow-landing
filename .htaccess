@@ -1,5 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^\.well-known/apple-app-site-association$ .well-known/apple-app-site-association.json [L]
+</IfModule>
+
 <IfModule mod_headers.c>
-    <Files "apple-app-site-association">
+    <FilesMatch "^(apple-app-site-association(?:\.json)?|assetlinks\.json)$">
         Header set Content-Type "application/json"
-    </Files>
+    </FilesMatch>
 </IfModule>
